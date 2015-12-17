@@ -1,13 +1,20 @@
 function movable() {
 
+
+  var findWindows = document.querySelectorAll(".window");
+  var i = 0;
+
   function addListeners() {
-      //
-      document.querySelector('.window').addEventListener('mousedown', mouseDown, false);
+
+      //Look for the window and add mousedown + and mouseup
+      for (i = 0; i < findWindows.length; i += 1) {
+        findWindows[i].addEventListener('mousedown', mouseDown, false);
+      }
+
       window.addEventListener('mouseup', mouseUp, false);
   }
 
-  function mouseUp()
-  {
+  function mouseUp() {
       //When releasing mouse.
       window.removeEventListener('mousemove', divMove, true);
   }
@@ -15,23 +22,28 @@ function movable() {
   function mouseDown(event) {
 
     //Saving coordinates on click.
-    aVarY = event.offsetY;
-    aVarX = event.offsetX;
+    if (event.target.className === "top") {
+      aVarY = event.offsetY;
+      aVarX = event.offsetX;
+      saveTarget = event.target;
+    }
 
     //Runs mousemove - if dragging on the right place
-    if(event.target.className === "top") {
+    // if(saveTarget) {
       window.addEventListener('mousemove', divMove, true);
-    }
+    // }
   }
 
-  function divMove(event){
+  function divMove(event) {
 
-    //Finds the window.
-    var findWindow = document.querySelector('.window');
+    //Checks for window top.
 
-    //Sets top and left on absolute element.
-    findWindow.style.top = event.y - aVarY + 'px';
-    findWindow.style.left = event.x - aVarX + 'px';
+    // if (event.target.className === "top") {
+
+      //Sets top and left on absolute element.
+      saveTarget.parentElement.style.top = event.y - aVarY + 'px';
+      saveTarget.parentElement.style.left = event.x - aVarX + 'px';
+    // }
   }
 
   addListeners();

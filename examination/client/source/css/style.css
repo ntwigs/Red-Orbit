@@ -63,8 +63,8 @@ body {
 
 .window {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 350px;
   border-radius: 2px;
   background-color: #1D1A05;
   overflow: hidden;
@@ -107,6 +107,7 @@ body {
   height: 20px;
   background-color: #7FB069;
   overflow: hidden;
+  cursor: move;
 }
 
 .exit {
