@@ -30,7 +30,7 @@ function movable() {
 
     //Runs mousemove - if dragging on the right place
     // if(saveTarget) {
-      window.addEventListener('mousemove', divMove, true);
+    window.addEventListener('mousemove', divMove, true);
     // }
   }
 

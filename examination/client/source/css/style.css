@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../image/dark_wall.png");
+  /*background-image: url("../image/dark_wall.png");*/
   background-color: #61636B;
   font-family: sans-serif;
 }
@@ -68,6 +68,9 @@ body {
   border-radius: 2px;
   background-color: #1D1A05;
   overflow: hidden;
+  top: 30px;
+  left: 30px;
+  border: 1px solid black;
 }
 
 .bottom {
