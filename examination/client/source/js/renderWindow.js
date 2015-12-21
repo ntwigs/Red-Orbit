@@ -4,6 +4,7 @@ function renderWindow() {
 
   var movable = require("./movable");
   var windowDestroyer = require("./windowDestroyer");
+  var memory = require("./memory.js");
 
   function navClick() {
     var findNav = document.querySelectorAll(".icon1");
@@ -22,6 +23,7 @@ function renderWindow() {
     document.querySelector("body").insertBefore(clone, beforeThis);
 
     movable.move();
+    memory.create();
     windowDestroyer.destroy();
   }
 
