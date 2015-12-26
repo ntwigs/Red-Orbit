@@ -6,7 +6,6 @@ function renderWindow(event) {
   var windowDestroyer = require("./windowDestroyer");
   var createMemory = require("./createMemory");
   var createChat = require("./createChat");
-  var chatSettings = require("./chatSettings");
 
   var i = 0;
   var number = "";
@@ -34,12 +33,11 @@ function renderWindow(event) {
     var beforeThis = document.querySelector(".wrapper-hero");
     document.querySelector("body").insertBefore(clone, beforeThis);
     var findAllWindows = document.querySelectorAll(".window");
-    for (i = 0; i < findAllWindows.length; i += 1) {
-      findAllWindows[i].classList.add("window-" + i);
-    }
+    // for (i = 0; i < findAllWindows.length; i += 1) {
+    //   findAllWindows[i].classList.add("window-" + i);
+    // }
 
     createChat.chat();
-    chatSettings.change();
     movable.move();
     windowDestroyer.destroy();
 

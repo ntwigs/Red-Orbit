@@ -9,11 +9,12 @@ function createChat() {
   var textContainer = document.querySelectorAll(".text-container");
   var enteredMessage = "";
   var checkNick = require("./checkNick");
-
-  checkNick.check();
+  var chatSettings = require("./chatSettings");
 
   var socket = new WebSocket("ws://vhost3.lnu.se:20080/socket/", "chattext");
+  chatSettings.change();
   for (var i = 0; i < findSubmit.length; i += 1) {
+    checkNick.check();
     findNickSubmit[i].addEventListener("click", function() {
       // *Hide after use - send to local storage  -> *Ish
       if (findNickArea[i - 1].value !== "") {
@@ -34,7 +35,6 @@ function createChat() {
       }
     });
   }
-
 
   var data = {
     "type": "message",
@@ -58,13 +58,11 @@ function createChat() {
     var pTagUser = document.createElement("P");
     var pTagMess = document.createElement("P");
     var divTagText = document.createElement("DIV");
-    // var brTag = document.createElement("BR");
     var chatData = JSON.parse(event.data).data;
     var chatUser = JSON.parse(event.data).username;
     var createText = document.createTextNode(chatData);
     var createUser = document.createTextNode(chatUser);
     pTagUser.appendChild(createUser);
-    // pTag.appendChild(brTag);
     pTagMess.appendChild(createText);
     divTagText.appendChild(pTagUser);
     divTagText.appendChild(pTagMess);
@@ -76,8 +74,6 @@ function createChat() {
       }
     }
   });
-
-
 
 }
 
