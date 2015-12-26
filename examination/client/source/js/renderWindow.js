@@ -6,6 +6,7 @@ function renderWindow(event) {
   var windowDestroyer = require("./windowDestroyer");
   var createMemory = require("./createMemory");
   var createChat = require("./createChat");
+  var chatSettings = require("./chatSettings");
 
   var i = 0;
   var number = "";
@@ -38,8 +39,9 @@ function renderWindow(event) {
     }
 
     createChat.chat();
-        movable.move();
-        windowDestroyer.destroy();
+    chatSettings.change();
+    movable.move();
+    windowDestroyer.destroy();
 
   }
 
@@ -54,8 +56,8 @@ function renderWindow(event) {
       }
 
       createMemory.create();
-          movable.move();
-          windowDestroyer.destroy();
+      movable.move();
+      windowDestroyer.destroy();
   }
 
 

@@ -5,17 +5,20 @@ function createChat() {
   var findNickSubmit = document.querySelectorAll(".accept-name");
   var findNickArea = document.querySelectorAll(".enter-nick");
   var textContainer = document.querySelectorAll(".text-container");
+  var findNameField = document.querySelectorAll(".name-field");
+  var textContainer = document.querySelectorAll(".text-container");
   var enteredMessage = "";
-  var theMessage = "";
-
 
   var socket = new WebSocket("ws://vhost3.lnu.se:20080/socket/", "chattext");
   for (var i = 0; i < findSubmit.length; i += 1) {
-    findTextArea[i].addEventListener("click", function() {
-      //Hide after use - send to local storage
-      data["username"] = findNickArea[i - 1].value;
+    findNickSubmit[i].addEventListener("click", function() {
+      // *Hide after use - send to local storage  -> *Ish
+      if (findNickArea[i - 1].value !== "") {
+        data["username"] = findNickArea[i - 1].value;
+        findNameField[i - 1].classList.add("name-field-gone");
+        textContainer[i - 1].classList.add("text-container-after");
+      }
     });
-
 
     findSubmit[i].addEventListener("click", function() {
         data["data"] = findTextArea[i - 1].value;
@@ -25,7 +28,7 @@ function createChat() {
 
   var data = {
     "type": "message",
-    "data" : theMessage,
+    "data" : "",
     "username": "",
     "channel": "",
     "key": "eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd"
@@ -62,9 +65,8 @@ function createChat() {
         textContainer[i].scrollTop = textContainer[i].scrollHeight;
       }
     }
-
-
   });
+
 
 
 }

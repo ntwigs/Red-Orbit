@@ -229,6 +229,7 @@ h1, h2 {
   height: 250px;
   background-color: rgba(255, 255, 255, 0.55);
   overflow-y: scroll;
+  transition: height 0.3s;
 }
 
 .text-container div {
@@ -245,6 +246,11 @@ h1, h2 {
   font-weight: bold;
 }
 
+.text-container-after {
+  height: 264px;
+  transition: height 0.3s;
+}
+
 .name-field {
   height: 20px;
   width: 96%;
@@ -252,6 +258,13 @@ h1, h2 {
   position: relative;
   top: 4px;
   background-color: black;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.name-field-gone {
+  height: 0px;
+  transition: height 0.3s;
 }
 
 .accept-name {
@@ -281,4 +294,13 @@ h1, h2 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+.nick-changer {
+  width: 22px;
+  margin: 1px;
+  height: 89%;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
 }
