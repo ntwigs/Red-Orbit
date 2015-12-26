@@ -8,6 +8,9 @@ function createChat() {
   var findNameField = document.querySelectorAll(".name-field");
   var textContainer = document.querySelectorAll(".text-container");
   var enteredMessage = "";
+  var checkNick = require("./checkNick");
+
+  checkNick.check();
 
   var socket = new WebSocket("ws://vhost3.lnu.se:20080/socket/", "chattext");
   for (var i = 0; i < findSubmit.length; i += 1) {
@@ -15,13 +18,20 @@ function createChat() {
       // *Hide after use - send to local storage  -> *Ish
       if (findNickArea[i - 1].value !== "") {
         data["username"] = findNickArea[i - 1].value;
-        findNameField[i - 1].classList.add("name-field-gone");
-        textContainer[i - 1].classList.add("text-container-after");
+        localStorage.setItem("nickname", findNickArea[i - 1].value);
+        for (var j = 0; j < textContainer.length; j += 1) {
+          //test
+          findNameField[j].classList.add("name-field-gone");
+          textContainer[j].classList.add("text-container-after");
+        }
       }
     });
 
     findSubmit[i].addEventListener("click", function() {
+      if (localStorage.nickname !== "") {
+        data["username"] = localStorage.getItem("nickname");
         data["data"] = findTextArea[i - 1].value;
+      }
     });
   }
 
