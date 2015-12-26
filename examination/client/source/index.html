@@ -4,6 +4,32 @@
   <meta charset="utf-8">
   <title>Instadesk</title>
 
+  <template id="chat-template">
+    <div class="window">
+      <div class="top">
+        <div class="exit">
+          <p class="exit-hero">+
+          </p>
+        </div>
+      </div>
+      <div class="name-field">
+        <div class="accept-name">
+          <p> Y
+          </p>
+        </div>
+        <div class="enter-name">
+          <input class="enter-nick" type="text" placeholder="Enter Nick"></input>
+        </div>
+      </div>
+      <div class="text-container">
+      </div>
+      <form id="chat-form">
+        <input class="submit" type="submit"></input>
+      </form>
+      <textarea class="text-mess" name="message" form="chat-form"></textarea>
+    </div>
+  </template>
+
   <template id="window-template">
     <div class="window">
       <div class="top">

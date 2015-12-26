@@ -14,9 +14,10 @@ function movable() {
       window.addEventListener("mouseup", mouseUp, false);
   }
 
-  function mouseUp() {
+  function mouseUp(event) {
       //When releasing mouse.
       window.removeEventListener("mousemove", divMove, true);
+      // event.target.parentElement.style.zIndex = "998";
   }
 
   function mouseDown(event) {
@@ -26,24 +27,17 @@ function movable() {
       aVarY = event.offsetY;
       aVarX = event.offsetX;
       saveTarget = event.target;
-    }
 
-    //Runs mousemove - if dragging on the right place
-    // if(saveTarget) {
-    window.addEventListener("mousemove", divMove, true);
-    // }
+      //Runs mousemove - if dragging on the right place
+      window.addEventListener("mousemove", divMove, true);
+    }
   }
 
   function divMove(event) {
 
-    //Checks for window top.
+    saveTarget.parentElement.style.top = event.y - aVarY + "px";
+    saveTarget.parentElement.style.left = event.x - aVarX + "px";
 
-    // if (event.target.className === "top") {
-
-      //Sets top and left on absolute element.
-      saveTarget.parentElement.style.top = event.y - aVarY + "px";
-      saveTarget.parentElement.style.left = event.x - aVarX + "px";
-    // }
   }
 
   addListeners();

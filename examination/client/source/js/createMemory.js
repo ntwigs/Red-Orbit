@@ -3,7 +3,7 @@
 function createMemory() {
 
   var loadCards = require("./loadCards");
-  loadCards.cards(2, 2);
+  loadCards.cards(4, 4);
 
   var cardCheck = require("./cardCheck");
   cardCheck.check();

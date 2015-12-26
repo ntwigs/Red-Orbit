@@ -4,11 +4,12 @@ function loadCards(rows, cards) {
 
   var j = 0;
   var i = 0;
-  var cardSort = -1;
+  var k = 0;
+  // var cardSort = -1;
 
   var createCard = document.createElement("DIV");
   createCard.classList.add("card");
-  var findCardContainer = document.querySelector(".card-container");
+  var findCardContainer = document.querySelectorAll(".card-container");
 
   for (i = 0; i < rows; i += 1) {
     var cardRow = document.createElement("DIV");
@@ -20,20 +21,25 @@ function loadCards(rows, cards) {
       createCard.classList.add("card");
       createCard.appendChild(createImg);
       cardRow.appendChild(createCard);
-      findCardContainer.appendChild(cardRow);
+    }
+
+    for (k = 0; k < findCardContainer.length; k += 1) {
+      findCardContainer[k].appendChild(cardRow);
     }
 
   }
 
   var findAllCards = document.querySelectorAll(".card");
 
-  if (findAllCards.length % 2 !== 0) {
-    throw new Error("no");
-  } else if (findAllCards.length > 16) {
-    throw new Error("Too many");
-  } else if (findAllCards.length < 4) {
-    throw new Error("Too few");
-  }
+
+//For later use
+  // if (findAllCards.length % 2 !== 0) {
+  //   throw new Error("no");
+  // } else if (findAllCards.length > 16) {
+  //   throw new Error("Too many");
+  // } else if (findAllCards.length < 4) {
+  //   throw new Error("Too few");
+  // }
 
 }
 
