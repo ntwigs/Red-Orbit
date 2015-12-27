@@ -20,9 +20,14 @@ function renderWindow(event) {
       } else if (event.target === findNav[1]) {
         renderMem();
       }
+
     });
 
     }
+
+
+
+
   }
 
   navClick();
@@ -33,9 +38,14 @@ function renderWindow(event) {
     var beforeThis = document.querySelector(".wrapper-hero");
     document.querySelector("body").insertBefore(clone, beforeThis);
     var findAllWindows = document.querySelectorAll(".window");
-    // for (i = 0; i < findAllWindows.length; i += 1) {
-    //   findAllWindows[i].classList.add("window-" + i);
-    // }
+    var counter = 0;
+
+    for (i = 0; i < findAllWindows.length; i += 1) {
+      counter++;
+    }
+
+    findAllWindows[counter - 1].style.top = "" + 30 * counter + "px";
+    findAllWindows[counter - 1].style.left = "" + 30 * counter + "px";
 
     createChat.chat();
     movable.move();
