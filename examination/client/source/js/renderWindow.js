@@ -6,6 +6,8 @@ function renderWindow(event) {
   var windowDestroyer = require("./windowDestroyer");
   var createMemory = require("./createMemory");
   var createChat = require("./createChat");
+  var windowPlacement = require("./windowPlacement");
+  var setZ = require("./setZ");
 
   var i = 0;
   var number = "";
@@ -37,19 +39,12 @@ function renderWindow(event) {
     var clone = document.importNode(template.content, true);
     var beforeThis = document.querySelector(".wrapper-hero");
     document.querySelector("body").insertBefore(clone, beforeThis);
-    var findAllWindows = document.querySelectorAll(".window");
-    var counter = 0;
 
-    for (i = 0; i < findAllWindows.length; i += 1) {
-      counter++;
-    }
-
-    findAllWindows[counter - 1].style.top = "" + 30 * counter + "px";
-    findAllWindows[counter - 1].style.left = "" + 30 * counter + "px";
-
+    windowPlacement.place();
     createChat.chat();
     movable.move();
     windowDestroyer.destroy();
+    setZ.set();
 
   }
 
@@ -58,14 +53,12 @@ function renderWindow(event) {
       var clone = document.importNode(template.content, true);
       var beforeThis = document.querySelector(".wrapper-hero");
       document.querySelector("body").insertBefore(clone, beforeThis);
-      var findAllWindows = document.querySelectorAll(".window");
-      for (i = 0; i < findAllWindows.length; i += 1) {
-        findAllWindows[i].classList.add("window-" + i);
-      }
 
+      windowPlacement.place();
       createMemory.create();
       movable.move();
       windowDestroyer.destroy();
+      setZ.set();
   }
 
 
