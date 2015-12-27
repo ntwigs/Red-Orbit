@@ -45,13 +45,28 @@ function createChat() {
   };
 
   socket.addEventListener("open", function (event) {
-    for (var i = 0; i < findSubmit.length; i += 1) {
-      findSubmit[i].addEventListener("click", function(event) {
-        socket.send(JSON.stringify(data));
-        findTextArea[i - 1].value = "";
-        event.preventDefault();
-      });
+    var i = 0;
+    var counter = 0;
+
+    for (i = 0; i < findSubmit.length; i += 1) {
+      counter++;
     }
+
+    console.log(counter);
+
+    findSubmit[counter - 1].addEventListener("click", function(event) {
+      socket.send(JSON.stringify(data));
+      findTextArea[counter - 1].value = "";
+      event.preventDefault();
+    });
+
+    findTextArea[counter - 1].addEventListener("keypress", function(event) {
+      if (event.keyCode == 13) {
+        findSubmit[counter - 1].click();
+        event.preventDefault();
+      }
+
+    });
   });
 
   socket.addEventListener("message", function (event) {
