@@ -52,8 +52,6 @@ function createChat() {
       counter++;
     }
 
-    console.log(counter);
-
     findSubmit[counter - 1].addEventListener("click", function(event) {
       socket.send(JSON.stringify(data));
       findTextArea[counter - 1].value = "";
