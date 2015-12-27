@@ -69,7 +69,7 @@ settingNe();
       counter++;
     }
 
-      windows[counter - 1].addEventListener("click", function() {
+      windows[counter - 1].addEventListener("mousedown", function() {
             this.style.zIndex = parseInt(higestZ(".window")) + 1;
       });
   }
