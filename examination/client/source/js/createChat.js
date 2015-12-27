@@ -10,31 +10,34 @@ function createChat() {
   var enteredMessage = "";
   var checkNick = require("./checkNick");
   var chatSettings = require("./chatSettings");
+  var noRepeatCounter = 0;
 
   var socket = new WebSocket("ws://vhost3.lnu.se:20080/socket/", "chattext");
   chatSettings.change();
   for (var i = 0; i < findSubmit.length; i += 1) {
-    checkNick.check();
-    findNickSubmit[i].addEventListener("click", function() {
-      // *Hide after use - send to local storage  -> *Ish
-      if (findNickArea[i - 1].value !== "") {
-        data["username"] = findNickArea[i - 1].value;
-        localStorage.setItem("nickname", findNickArea[i - 1].value);
-        for (var j = 0; j < textContainer.length; j += 1) {
-          //test
-          findNameField[j].classList.add("name-field-gone");
-          textContainer[j].classList.add("text-container-after");
-        }
-      }
-    });
-
-    findSubmit[i].addEventListener("click", function() {
-      if (localStorage.nickname !== "") {
-        data["username"] = localStorage.getItem("nickname");
-        data["data"] = findTextArea[i - 1].value;
-      }
-    });
+      checkNick.check();
+      noRepeatCounter++;
   }
+
+  findNickSubmit[noRepeatCounter - 1].addEventListener("click", function() {
+    // *Hide after use - send to local storage  -> *Ish
+    if (findNickArea[noRepeatCounter - 1].value !== "") {
+      data["username"] = findNickArea[noRepeatCounter - 1].value;
+      localStorage.setItem("nickname", findNickArea[noRepeatCounter - 1].value);
+      // for (var j = 0; j < textContainer.length; j += 1) {
+        //test
+        findNameField[noRepeatCounter - 1].classList.add("name-field-gone");
+        textContainer[noRepeatCounter - 1].classList.add("text-container-after");
+      // }
+    }
+  });
+
+  findSubmit[noRepeatCounter - 1].addEventListener("click", function() {
+    if (localStorage.nickname !== "") {
+      data["username"] = localStorage.getItem("nickname");
+      data["data"] = findTextArea[noRepeatCounter - 1].value;
+    }
+  });
 
   var data = {
     "type": "message",
