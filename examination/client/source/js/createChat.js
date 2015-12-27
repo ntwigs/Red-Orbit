@@ -80,8 +80,14 @@ function createChat() {
     divTagText.appendChild(pTagUser);
     divTagText.appendChild(pTagMess);
 
+
     for (var i = 0; i < textContainer.length; i += 1) {
       if (chatUser !== "" && chatData !== "") {
+
+          if (chatUser === localStorage.getItem("nickname")) {
+            divTagText.classList.add("user-sent");
+          }
+
         textContainer[i].appendChild(divTagText);
         textContainer[i].scrollTop = textContainer[i].scrollHeight;
       }
