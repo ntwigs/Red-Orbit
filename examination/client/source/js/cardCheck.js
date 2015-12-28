@@ -10,6 +10,7 @@ function cardCheck() {
   var findImgInsideWindow = document.querySelectorAll(".window img");
 
     console.log(cardArr);
+
   function randomizing() {
     for (i = 0; i < calculatingCards/2; i += 1) {
       cardArr.push(i+1);
@@ -46,7 +47,7 @@ function cardCheck() {
   for (i = 0; i < findImgInsideWindow.length; i += 1) {
 
     theCards = randomizing();
-
+    // console.log(theCards);
     if (theCards[i] !== 0) {
       removeTheNumber = theCards.splice(0, 1);
     }

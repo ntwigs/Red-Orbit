@@ -14,7 +14,6 @@ function checkNick() {
   if (localStorage.getItem("nickname") !== null) {
     nickname = localStorage.getItem("nickname");
     nickInput[k - 1].classList.add("name-field-gone");
-
   } else {
       nickInput[k - 1].classList.remove("name-field-gone");
   }
