@@ -151,7 +151,6 @@ body {
 
 .aPair {
   visibility: hidden;
-  display: none;
   opacity: 0;
   transition: all 1s;
 }
@@ -179,10 +178,11 @@ h1, h2 {
   background-size: 100% auto;
   background-position: 50% 50%;
   opacity: 0.8;
+  transition: all 0.2s;
 }
 
 .card:hover {
-  background-size: 110% auto;
+  transform: scale(1.15);
   opacity: 1;
 }
 

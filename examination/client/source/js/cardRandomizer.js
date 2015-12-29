@@ -14,15 +14,29 @@ function cardRandomizer() {
     }
   }
 
+  function shuffle(cardArr) {
+    var m = cardArr.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = cardArr[m];
+      cardArr[m] = cardArr[i];
+      cardArr[i] = t;
+    }
+
+    return cardArr;
+}
+
   for (i = 0; i < windows.length; i += 1) {
     newCounter++;
   }
 
-
   randomAndSet();
-
-
-
 
   function randomAndSet() {
     var counter = 0;
@@ -35,26 +49,12 @@ function cardRandomizer() {
     var cardsInWindows = windows[windowCount - 1].querySelectorAll(".card");
 
     for (i = 0; i < 16; i += 1) {
-      newNumber = cardArr.splice(0, 1);
+      newNumber = shuffle(cardArr).splice(0, 1);
       counter++;
       cardsInWindows[counter - 1].parentElement.classList.add(newNumber);
     }
 
-    counter = 0;
-
-    for (i = 0; i < cards.length; i += 1) {
-
-      counter++;
-
-      cards[counter - 1].addEventListener("click", function() {
-        console.log(this.parentElement.className);
-        this.style.backgroundImage = "url('../image/" + this.parentElement.className + ".png')";
-      });
-    }
-
   }
-
-  // console.log(cardArr);
 
 }
 

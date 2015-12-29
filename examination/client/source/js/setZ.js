@@ -6,19 +6,12 @@ function setZ() {
   var newCounter = 0;
   var newArr = [];
 
-  // for (i = 0; i < windows.length; i += 1) {
-  //   if (windows[i].style.getPropertyValue("z-index") === "") {
-  //     windows[i].style.zIndex = 1;
-  //   }
-  // }
-
   function higestZ(theWindows) {
 
     var glassSquare = document.querySelectorAll(theWindows);
     var highest = 0;
 
     for (var i = 0; i < glassSquare.length; i++) {
-      console.log(getComputedStyle(glassSquare[i]).getPropertyValue("z-index"));
       var zindex = window.getComputedStyle(glassSquare[i]).getPropertyValue("z-index");
 
       if ((zindex > highest) && (zindex !== "auto")) {
@@ -57,12 +50,6 @@ function getHighest(increase) {
 settingNe();
 
 
-
-// console.log(highestZ);
-
-  // window.addEventListener("click", function() {
-  // });
-
   function settingNe() {
 
     for (i = 0; i < windows.length; i += 1) {
@@ -70,8 +57,14 @@ settingNe();
     }
 
       windows[counter - 1].addEventListener("mousedown", function() {
-            this.style.zIndex = parseInt(higestZ(".window")) + 1;
+        this.style.zIndex = parseInt(higestZ(".window")) + 1;
+        // this.style.opacity = 0.85;
       });
+
+      // windows[counter - 1].addEventListener("mouseup", function() {
+      //   this.style.opacity = 1;
+      // });
+
   }
 
   // settingNe();
@@ -81,7 +74,6 @@ settingNe();
     for (i = 0; i < windows.length; i += 1) {
       counter++;
     }
-
 
     other();
 
@@ -100,7 +92,7 @@ settingNe();
       var newArr = [];
 
         if (this.style.zIndex <= 998) {
-          console.log("was less than 999");
+          // console.log("was less than 999");
           this.style.zIndex = 999;
         }
 

@@ -24,11 +24,13 @@ function movable() {
         aVarX = event.offsetX;
         saveTarget = event.target;
         window.addEventListener("mousemove", divMove, true);
+        saveTarget.parentElement.style.opacity = 0.85;
       }
   }
 
   function mouseUp(event) {
       window.removeEventListener("mousemove", divMove, true);
+      saveTarget.parentElement.style.opacity = 1;
   }
 
   function divMove(event) {

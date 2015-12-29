@@ -19,6 +19,10 @@ function createMemory() {
 
   var cardRandomizer = require("./cardRandomizer");
   cardRandomizer.run();
+
+  var checkPair = require("./checkPair");
+  checkPair.check();
+
 }
 
 module.exports.create = createMemory;
