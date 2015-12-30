@@ -12,7 +12,7 @@ function chatSettings(event) {
   }
 
   function findAndSet(event) {
-    
+
       nicking[k - 1].setAttribute("placeholder", localStorage.getItem("nickname"));
 
       if (event.target.parentElement.parentElement.children[1].classList.contains("name-field-gone")) {

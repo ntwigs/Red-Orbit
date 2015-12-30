@@ -4,8 +4,8 @@ function renderWindow(event) {
 
   var movable = require("./movable");
   var windowDestroyer = require("./windowDestroyer");
-  var createMemory = require("./createMemory");
-  var createChat = require("./createChat");
+  var createMemory = require("./memory/createMemory");
+  var createChat = require("./chat/createChat");
   var windowPlacement = require("./windowPlacement");
   var setZ = require("./setZ");
 
