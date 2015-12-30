@@ -2,15 +2,6 @@
 
 function createMemory() {
 
-  // var loadCards = require("./loadCards");
-  // loadCards.cards(4, 4);
-  //
-  // var cardCheck = require("./cardCheck");
-  // cardCheck.check();
-  //
-  // var pairCheck = require("./pairCheck");
-  // pairCheck.pair();
-
   var loadingCards = require("./loadingCards");
   loadingCards.load();
 
@@ -22,6 +13,9 @@ function createMemory() {
 
   var checkPair = require("./checkPair");
   checkPair.check();
+
+  var winCheck = require("./winCheck");
+  winCheck.win();
 
 }
 

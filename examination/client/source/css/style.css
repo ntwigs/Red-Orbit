@@ -186,6 +186,11 @@ h1, h2 {
   opacity: 1;
 }
 
+.card:focus {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
 .card-click-one {
   background-color: #A1869E;
   border-radius: 5px;
@@ -245,6 +250,7 @@ h1, h2 {
   margin-bottom: 15px;
   padding: 2px;
   background-color: rgba(255, 255, 255, 0.25);
+  word-wrap: break-word;
 }
 
 .text-container div p {

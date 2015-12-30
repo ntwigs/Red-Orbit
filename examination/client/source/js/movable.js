@@ -29,8 +29,13 @@ function movable() {
   }
 
   function mouseUp(event) {
-      window.removeEventListener("mousemove", divMove, true);
-      saveTarget.parentElement.style.opacity = 1;
+
+    for (i = 0; i < findWindows.length; i += 1) {
+      findWindows[i].style.opacity = 1;
+    }
+
+    window.removeEventListener("mousemove", divMove, true);
+    
   }
 
   function divMove(event) {
