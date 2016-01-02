@@ -1,22 +1,12 @@
-function winCheck() {
-  var windows = document.querySelectorAll(".card-container");
-  var i = 0;
-  var counter = 0;
-
-  for (i = 0; i < windows.length; i += 1) {
-    counter++;
-  }
-
-
-  windows[counter - 1].addEventListener("click", function() {
-    var cardsMatch = windows[counter - 1].querySelectorAll(".aPair");
-
-    if (cardsMatch.length === 16) {
-        console.log("YOU WIN");
-      }
-
-  });
-
+function winCheck(currentWindow, container) {
+  var youWin = document.createTextNode("YOU WIN!");
+  var breaking = document.createElement("BR");
+  var ptag = document.createElement("P");
+  ptag.appendChild(youWin);
+  ptag.classList.add("winning-message");
+  currentWindow.appendChild(breaking);
+  currentWindow.appendChild(ptag);
+  currentWindow.classList.add("present-click");
 }
 
 module.exports.win = winCheck;

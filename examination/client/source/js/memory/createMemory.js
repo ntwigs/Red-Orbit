@@ -14,9 +14,6 @@ function createMemory() {
   var checkPair = require("./checkPair");
   checkPair.check();
 
-  var winCheck = require("./winCheck");
-  winCheck.win();
-
 }
 
 module.exports.create = createMemory;

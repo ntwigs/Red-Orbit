@@ -8,80 +8,95 @@ function checkPair() {
   var newCounter = 0;
   var clicks = 0;
   var tries = 0;
+  var pairCounter = 0;
   var windows = document.querySelectorAll(".window");
+  var winCheck = require("./winCheck");
 
   for (i = 0; i < container.length; i += 1) {
     counter++;
   }
 
   var cardsInWindow = container[counter - 1].querySelectorAll(".card");
-  var counterInWindow = windows[counter - 1].querySelector(".clickCounter");
+  var counterInWindow = container[counter - 1].parentElement.querySelector(".clickCounter");
 
   for (i = 0; i < cardsInWindow.length; i += 1) {
-      cardsInWindow[i].addEventListener("click", function(event) {
+  cardsInWindow[i].addEventListener("keypress", function() {
+      if (event.keyCode === 13) {
+        this.click();
+      }
+          event.preventDefault();
+  });
+      cardsInWindow[i].addEventListener("click", listener);
+  }
 
-      if (clicks < 2) {
+  function listener(event) {
 
-      clicks += 1;
+  if (clicks < 2) {
 
-      tries += 1;
+  clicks += 1;
 
-
-      this.style.backgroundImage = "url('../image/" + this.parentElement.className + ".png')";
-
-        if (targetArr.length >= 2) {
-          targetArr.length = 0;
-        }
-
-        if (targetArr.length < 2) {
-          targetArr.push(this);
-        }
-
-        if (targetArr[0] === targetArr[1]) {
-          targetArr = targetArr.splice(0, 1);
-          clicks = clicks -= 1;
-          tries = tries -= 1;
-        }
+  tries += 1;
 
 
-        counterInWindow.textContent = tries;
+  this.style.backgroundImage = "url('../image/" + this.parentElement.className + ".png')";
 
-          if (targetArr[0] !== targetArr[1]) {
-            if (newArr.length < 1) {
-              newArr.push(this.parentElement.className);
-              saveTarget.push(this);
-            } else if (newArr.length < 2) {
-              if(targetArr[0] && targetArr[1]) {
-                newArr.push(this.parentElement.className);
-                saveTarget.push(this);
-              }
-            } else if (newArr.length >= 2) {
-                newArr.length = 0;
-                saveTarget.length = 0;
-                newArr.push(this.parentElement.className);
-                saveTarget.push(this);
-            }
-          if (newArr[0] && newArr[1]) {
-            if (newArr[0] === newArr[1]) {
-              setTimeout(function() {
-                saveTarget[0].classList.add("aPair");
-                saveTarget[1].classList.add("aPair");
-                console.log("PAIR");
-                clicks = 0;
-                }, 1000);
-            } else {
-              setTimeout(function() {
-                saveTarget[0].style.backgroundImage = "url('../image/0.png')";
-                saveTarget[1].style.backgroundImage = "url('../image/0.png')";
-                console.log("NOT A PAIR");
-                clicks = 0;
-                }, 1000);
-            }
+    if (targetArr.length >= 2) {
+      targetArr.length = 0;
+    }
+
+    if (targetArr.length < 2) {
+      targetArr.push(this);
+    }
+
+    if (targetArr[0] === targetArr[1]) {
+      targetArr = targetArr.splice(0, 1);
+      clicks = clicks -= 1;
+      tries = tries -= 1;
+      pairCounter = pairCounter -= 1;
+    }
+
+
+    counterInWindow.textContent = tries;
+
+      if (targetArr[0] !== targetArr[1]) {
+        if (newArr.length < 1) {
+          newArr.push(this.parentElement.className);
+          saveTarget.push(this);
+        } else if (newArr.length < 2) {
+          if(targetArr[0] && targetArr[1]) {
+            newArr.push(this.parentElement.className);
+            saveTarget.push(this);
           }
+        } else if (newArr.length >= 2) {
+            newArr.length = 0;
+            saveTarget.length = 0;
+            newArr.push(this.parentElement.className);
+            saveTarget.push(this);
+        }
+      if (newArr[0] && newArr[1]) {
+        if (newArr[0] === newArr[1]) {
+          setTimeout(function() {
+            saveTarget[0].classList.add("aPair");
+            saveTarget[1].classList.add("aPair");
+            console.log("PAIR");
+            clicks = 0;
+            pairCounter += 1;
+            if (pairCounter >= 8) {
+              winCheck.win(counterInWindow);
+            }
+            }, 1000);
+        } else {
+          setTimeout(function() {
+            saveTarget[0].style.backgroundImage = "url('../image/0.png')";
+            saveTarget[1].style.backgroundImage = "url('../image/0.png')";
+            console.log("NOT A PAIR");
+            clicks = 0;
+            }, 1000);
         }
       }
-  });
+    }
   }
+}
 }
 
 
