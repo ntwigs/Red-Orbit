@@ -213,12 +213,57 @@ h1, h2 {
 }
 
 .present-click {
-  transition: all 1s;
   bottom: 292px;
 }
 
 .winning-message {
   font-size: 0.5em;
+}
+
+.theme-changer {
+  width: 22px;
+  margin: 1px;
+  height: 89%;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.theme-selector {
+  transition: height 0.3s;
+  width: 96%;
+  background-color: turquoise;
+  height: 20px;
+  margin: 0 auto;
+  position: relative;
+  top: 4px;
+  overflow: hidden;
+}
+
+.theme-selector .picker-container {
+  width: 25%;
+  height: 100%;
+  background-color: green;
+  float: left;
+}
+
+.theme-selector .picker-container div {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.theme-field-gone {
+  height: 0px;
+  transition: height 0.3s;
+}
+
+.card-container-after {
+  height: 20px;
+  transition: height 0.3s;
 }
 
 /*----CHAT----------------------------------------------------------*/

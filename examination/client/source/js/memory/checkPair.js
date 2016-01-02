@@ -37,8 +37,14 @@ function checkPair() {
 
   tries += 1;
 
+  if (localStorage.theme !== "") {
+    var lastTheme = localStorage.getItem("theme");
+    this.style.backgroundImage = "url('../image/" + lastTheme + "/" + this.parentElement.className + ".png')";
+  } else {
+    this.style.backgroundImage = "url('../image/plain/0.png')";
+  }
 
-  this.style.backgroundImage = "url('../image/" + this.parentElement.className + ".png')";
+  //Här ska man kunna ändra vilken bilden ska vara.
 
     if (targetArr.length >= 2) {
       targetArr.length = 0;
@@ -54,7 +60,6 @@ function checkPair() {
       tries = tries -= 1;
       pairCounter = pairCounter -= 1;
     }
-
 
     counterInWindow.textContent = tries;
 
@@ -87,8 +92,17 @@ function checkPair() {
             }, 1000);
         } else {
           setTimeout(function() {
-            saveTarget[0].style.backgroundImage = "url('../image/0.png')";
-            saveTarget[1].style.backgroundImage = "url('../image/0.png')";
+
+            if (localStorage.theme !== "") {
+              var lastTheme = localStorage.getItem("theme");
+              saveTarget[0].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
+              saveTarget[1].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
+            } else {
+              saveTarget[0].style.backgroundImage = "url('../image/plain/0.png')";
+              saveTarget[1].style.backgroundImage = "url('../image/plain/0.png')";
+            }
+
+            //Samma som grunden.
             console.log("NOT A PAIR");
             clicks = 0;
             }, 1000);

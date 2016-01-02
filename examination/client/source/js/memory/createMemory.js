@@ -5,6 +5,9 @@ function createMemory() {
   var loadingCards = require("./loadingCards");
   loadingCards.load();
 
+  var themeChanger = require("./themeChanger");
+  themeChanger.change();
+
   var setCards = require("./setCards");
   setCards.set();
 

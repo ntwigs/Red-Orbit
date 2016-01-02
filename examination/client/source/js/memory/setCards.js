@@ -6,7 +6,13 @@ function setCards() {
 
   for (i = 0; i < cards.length; i += 1) {
     if (window.getComputedStyle(cards[i]).getPropertyValue("background-image") === "none") {
-      cards[i].style.backgroundImage = "url('../image/0.png')";
+      if (localStorage.theme !== "") {
+        var lastTheme = localStorage.getItem("theme");
+        cards[i].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
+      } else {
+        cards[i].style.backgroundImage = "url('../image/plain/0.png')";
+      }
+      //Här kan man ändra grunden.
     }
   }
 
