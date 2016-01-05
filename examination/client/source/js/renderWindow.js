@@ -6,6 +6,7 @@ function renderWindow(event) {
   var windowDestroyer = require("./windowDestroyer");
   var createMemory = require("./memory/createMemory");
   var createChat = require("./chat/createChat");
+  var colorSchemeer = require("./colorSchemeer/colorSchemeer");
   var windowPlacement = require("./windowPlacement");
   var setZ = require("./setZ");
 
@@ -21,6 +22,8 @@ function renderWindow(event) {
         render();
       } else if (event.target === findNav[1]) {
         renderMem();
+      } else if (event.target === findNav[2]) {
+        renderSchemee();
       }
 
     });
@@ -56,6 +59,19 @@ function renderWindow(event) {
 
       windowPlacement.place();
       createMemory.create();
+      movable.move();
+      windowDestroyer.destroy();
+      setZ.set();
+  }
+
+  function renderSchemee() {
+      var template = document.querySelector("#schemee-template");
+      var clone = document.importNode(template.content, true);
+      var beforeThis = document.querySelector(".wrapper-hero");
+      document.querySelector("body").insertBefore(clone, beforeThis);
+
+      windowPlacement.place();
+      colorSchemeer.initialize();
       movable.move();
       windowDestroyer.destroy();
       setZ.set();

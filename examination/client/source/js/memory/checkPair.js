@@ -37,12 +37,14 @@ function checkPair() {
 
   tries += 1;
 
-  if (localStorage.theme !== "") {
-    var lastTheme = localStorage.getItem("theme");
-    this.style.backgroundImage = "url('../image/" + lastTheme + "/" + this.parentElement.className + ".png')";
-  } else {
-    this.style.backgroundImage = "url('../image/plain/0.png')";
-  }
+  var getWindow = this.parentElement.parentElement.parentElement.parentElement;
+  var currentTheme = getWindow.getAttribute("data-theme");
+
+  // if (localStorage.theme !== "") {
+    this.style.backgroundImage = "url('../image/" + currentTheme + "/" + this.parentElement.className + ".png')";
+  // } else {
+  //   this.style.backgroundImage = "url('../image/plain/0.png')";
+  // }
 
   //Här ska man kunna ändra vilken bilden ska vara.
 
@@ -94,9 +96,9 @@ function checkPair() {
           setTimeout(function() {
 
             if (localStorage.theme !== "") {
-              var lastTheme = localStorage.getItem("theme");
-              saveTarget[0].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
-              saveTarget[1].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
+              // var lastTheme = localStorage.getItem("theme");
+              saveTarget[0].style.backgroundImage = "url('../image/" + currentTheme + "/0.png')";
+              saveTarget[1].style.backgroundImage = "url('../image/" + currentTheme + "/0.png')";
             } else {
               saveTarget[0].style.backgroundImage = "url('../image/plain/0.png')";
               saveTarget[1].style.backgroundImage = "url('../image/plain/0.png')";

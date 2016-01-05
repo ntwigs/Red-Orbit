@@ -233,7 +233,7 @@ h1, h2 {
 .theme-selector {
   transition: height 0.3s;
   width: 96%;
-  background-color: turquoise;
+  background-color: rgba(255, 255, 255, 0.1);
   height: 20px;
   margin: 0 auto;
   position: relative;
@@ -244,14 +244,12 @@ h1, h2 {
 .theme-selector .picker-container {
   width: 25%;
   height: 100%;
-  background-color: green;
   float: left;
 }
 
 .theme-selector .picker-container div {
   width: 20px;
   height: 20px;
-  background-color: blue;
   margin: 0 auto;
   border-radius: 100%;
 }
@@ -264,6 +262,50 @@ h1, h2 {
 .card-container-after {
   height: 20px;
   transition: height 0.3s;
+}
+
+.plain {
+  background-color: white;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.plain:hover {
+  opacity: 1;
+}
+
+.red {
+  background-color: red;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.red:hover {
+  opacity: 1;
+}
+
+.blue {
+  background-color: blue;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.blue:hover {
+  opacity: 1;
+}
+
+.green {
+  background-color: green;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: all 0.3s;
+}
+
+.green:hover {
+  opacity: 1;
 }
 
 /*----CHAT----------------------------------------------------------*/
@@ -381,4 +423,48 @@ h1, h2 {
 
 .user-sent {
   text-align: right;
+}
+
+/*------SCHEMEER----------------------------------------------------------*/
+
+.wider {
+  width: 500px;
+}
+
+.schemeer-canvas {
+  width: 200px;
+  height: 286px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  float: right;
+  margin: 20px;
+}
+
+.color-container {
+  float: left;
+  width: 170px;
+  height: 250px;
+  margin-top: 39px;
+}
+
+.round {
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border: 1px solid black;
+  float: left;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.color-row {
+  margin-top: 25px;
+  display: inline-block;
+  width: 100%;
+}
+
+.color-row input {
+  margin: 3px;
+  width: 120px;
+  float: left;
+  display: inline;
 }
