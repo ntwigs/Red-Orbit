@@ -1,18 +1,13 @@
 function loadScheme() {
-  // var getCanvas = document.querySelector(".schemeer-canvas");
-  // var ctx = getCanvas.getContext("2d");
-  // ctx.fillStyle = "#8E6C88";
+  // var findSquare = document.querySelectorAll(".design-square");
+  // var counter = 0;
+  // var i = 0;
   //
-  // getCanvas.addEventListener("click", function(event) {
+  // for (i = 0; i < findSquare.length; i += 1) {
+  //   counter++;
+  // }
   //
-  //   var farLeft = getCanvas.offsetLeft;
-  //   var farTop = getCanvas.offsetTop;
-  //
-  //   var x = event.pageX - farLeft;
-  //   var y = event.pageY - farTop;
-  //   ctx.fillRect(x, y, 150 ,75);
-  //
-  // });
+  // findSquare[counter - 1].
 
 }
 

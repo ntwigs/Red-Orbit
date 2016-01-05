@@ -18,26 +18,41 @@ function fetchColor() {
 
     newCounter++;
 
+
     hexIn[i].addEventListener("keydown", function() {
-      // if (this.value.length === 5) {
-      // var savethis = this.value;
-      // this.parentElement.children[0].style.backgroundColor = "#" + hexIn[i].value;
-        // setTimeout(function() {
+
         this.addEventListener("keyup", function() {
+
           if (this.value.length === 6 && this.value.slice(0, 1) !== "#") {
             this.value = "#" + this.value;
             this.parentElement.children[0].style.backgroundColor = this.value;
           } else if (this.value.length === 7 && this.value.slice(0, 1) === "#") {
-
               this.parentElement.children[0].style.backgroundColor = this.value;
-          } else if (this.value.length > 7) {
-            this.value.length = 7;
+          } else if (this.value.length >= 7 && this.value.slice(0, 1) !== "#") {
+              this.value = "#" + this.value.slice(0, -1);
           }
+
+          //Check if entered text is valid hex.
+          var reg = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
+          if (this.value.length === 7) {
+
+            if (!reg.test(this.value)) {
+              this.style.backgroundColor = "red";
+            } else {
+              this.style.backgroundColor = "green";
+            }
+
+          } else if (this.value.length < 7) {
+
+            this.style.backgroundColor = "white";
+
+          }
+
         });
+
     });
   }
-
-
 
 }
 
