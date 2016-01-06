@@ -12,24 +12,60 @@ function fetchColor() {
   var hexIn = hexContain[counter - 1].querySelectorAll(".color-row input");
 
   for (i = 0; i < hexIn.length; i += 1) {
-    // if (hexIn[i].value.length === 5) {
-    //   hexIn[i].parentElement.children[0].style.backgroundColor = "#" + this.value + "0";
-    // }
 
     newCounter++;
 
 
     hexIn[i].addEventListener("keydown", function() {
+      // console.log(saveTarget);
 
         this.addEventListener("keyup", function() {
+          var saveTarget = this.parentElement.parentElement.parentElement;
+          saveTarget = saveTarget.children[1].children[1];
 
           if (this.value.length === 6 && this.value.slice(0, 1) !== "#") {
             this.value = "#" + this.value;
             this.parentElement.children[0].style.backgroundColor = this.value;
+            if (this === hexIn[0]) {
+              saveTarget.style.backgroundColor = this.value;
+            }
+            if (this === hexIn[1]) {
+              saveTarget.children[0].style.backgroundColor = this.value;
+            }
+            if (this === hexIn[2]) {
+              saveTarget.children[1].style.backgroundColor = this.value;
+            }
+            if (this === hexIn[3]) {
+              saveTarget.children[2].style.backgroundColor = this.value;
+            }
           } else if (this.value.length === 7 && this.value.slice(0, 1) === "#") {
               this.parentElement.children[0].style.backgroundColor = this.value;
+              if (this === hexIn[0]) {
+                saveTarget.style.backgroundColor = this.value;
+              }
+              if (this === hexIn[1]) {
+                saveTarget.children[0].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[2]) {
+                saveTarget.children[1].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[3]) {
+                saveTarget.children[2].style.backgroundColor = this.value;
+              }
           } else if (this.value.length >= 7 && this.value.slice(0, 1) !== "#") {
               this.value = "#" + this.value.slice(0, -1);
+              if (this === hexIn[0]) {
+                saveTarget.style.backgroundColor = this.value;
+              }
+              if (this === hexIn[1]) {
+                saveTarget.children[0].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[2]) {
+                saveTarget.children[1].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[3]) {
+                saveTarget.children[2].style.backgroundColor = this.value;
+              }
           }
 
           //Check if entered text is valid hex.
@@ -48,6 +84,8 @@ function fetchColor() {
             this.style.backgroundColor = "white";
 
           }
+
+
 
         });
 

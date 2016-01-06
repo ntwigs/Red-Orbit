@@ -6,6 +6,9 @@ function colorSchemeer() {
   var fetchColor = require("./fetchColor");
   fetchColor.fetch();
 
+  var setFontFamily = require("./setFontFamily");
+  setFontFamily.set();
+
 }
 
 module.exports.initialize = colorSchemeer;

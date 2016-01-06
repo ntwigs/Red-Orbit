@@ -1,13 +1,17 @@
 function loadScheme() {
-  // var findSquare = document.querySelectorAll(".design-square");
-  // var counter = 0;
-  // var i = 0;
-  //
-  // for (i = 0; i < findSquare.length; i += 1) {
-  //   counter++;
-  // }
-  //
-  // findSquare[counter - 1].
+  var findSquare = document.querySelectorAll(".design-square");
+  var tempOne = document.querySelector("#design-one");
+  var clone = document.importNode(tempOne.content, true);
+  var counter = 0;
+  var i = 0;
+
+  var setPoint = document.querySelectorAll(".before-this");
+
+  for (i = 0; i < findSquare.length; i += 1) {
+    counter++;
+  }
+
+  findSquare[counter - 1].insertBefore(clone, setPoint[counter - 1]);
 
 }
 
