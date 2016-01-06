@@ -3,3 +3,5 @@ renderWindow.render();
 
 var taskbar = require("./taskbar");
 taskbar.bringForth();
+
+//Check on window icon

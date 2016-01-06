@@ -19,7 +19,7 @@ function movable() {
 
   function mouseDown(event) {
 
-      if (event.target.className === "top") {
+      if (event.target.className.slice(0, 3) === "top") {
         aVarY = event.offsetY;
         aVarX = event.offsetX;
         saveTarget = event.target;
@@ -35,7 +35,7 @@ function movable() {
     }
 
     window.removeEventListener("mousemove", divMove, true);
-    
+
   }
 
   function divMove(event) {
