@@ -63,29 +63,6 @@ function setFontFamily() {
     }
   });
 
-  // if () {
-  //
-  // }
-
-//   function change() {
-//   var round = document.querySelector(".swootch").firstElementChild;
-//   var findTjosan = document.querySelector(".tjosan");
-//   var swootch = document.querySelector(".swootch");
-//   var how = round.getAttribute("margin-left");
-//   // console.log(how);
-//
-//   swootch.addEventListener("click", function() {
-//     if (round.classList.contains("round-click")) {
-//       round.classList.remove("round-click");
-//       findTjosan.classList.remove("new-fam");
-//     } else {
-//       round.classList.add("round-click");
-//       findTjosan.classList.add("new-fam");
-//     }
-//   });
-// }
-//
-// change();
 
 }
 

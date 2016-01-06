@@ -59,6 +59,20 @@ body {
   margin: 0 auto;
 }
 
+.icon-gamepad {
+  background-image: url('../image/icons/gamepad.png');
+  background-size: 100% auto;
+}
+
+.icon-chat {
+  background-image: url('../image/icons/chat.png');
+  background-size: 100% auto;
+}
+
+.icon-coloring {
+  background-image: url('../image/icons/coloring.png');
+  background-size: 100% auto;
+}
 
 /*------WINDOW---------------------------------------------------------------*/
 
@@ -558,6 +572,7 @@ h1, h2 {
   margin-left: 33px;
   margin-top: 16px;
   color: white;
+  font-weight: bold;
 }
 
 .header-one input:hover {
