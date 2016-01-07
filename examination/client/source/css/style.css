@@ -54,22 +54,30 @@ body {
 
 .icon-gamepad {
   background-image: url('../image/icons/gamepadgrey.png');
-  background-size: 100% auto;
+  background-size: 83% auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .icon-chat {
   background-image: url('../image/icons/chatgrey.png');
-  background-size: 100% auto;
+  background-size: 83% auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .icon-coloring {
   background-image: url('../image/icons/coloringgrey.png');
-  background-size: 100% auto;
+  background-size: 83% auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .icon-what {
   background-image: url('../image/icons/whatgrey.png');
-  background-size: 100% auto;
+  background-size: 83% auto;
+  background-position: 50% 50%;
+  background-repeat:  no-repeat;
 }
 
 /*------WINDOW---------------------------------------------------------------*/
@@ -496,8 +504,8 @@ h1, h2 {
 /*------SCHEMEER----------------------------------------------------------*/
 
 .wider {
-  width: 500px;
-  height: 500px;
+  width: 464px;
+  height: 325px;
 }
 
 .design-square {
@@ -505,62 +513,79 @@ h1, h2 {
   height: 286px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   float: right;
-  margin-top: 136px;
-  margin-right: 56px;
-  border-radius: 4px;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 2px;
   overflow: hidden;
-  /*background-color: turquoise;*/
+  background-color: #1f1f1f;
 }
 
 .color-container {
   float: left;
-  width: 170px;
-  height: 250px;
-  margin-top: 107px;
+  width: 206px;
+  height: 289px;
+  left: 9px;
+  top: 8px;
+  position: relative;
+  border-radius: 2px;
+  background-color: #1F1F1F;
+  /* bottom: 38px; */
 }
 
 .round {
   width: 25px;
   height: 25px;
   background-color: green;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   float: left;
   border-radius: 100%;
   margin-left: 10px;
+  margin-right: 4px;
 }
 
 .color-row {
-  margin-top: 25px;
+  margin-top: 5px;
   display: inline-block;
   width: 100%;
+  position:  relative;
+  bottom: 22px;
 }
 
 .color-row input {
   margin: 3px;
-  width: 120px;
+  width: 148px;
   float: left;
+  position:  relative;
+  top: 1px;
+  border: 0;
   display: inline;
+  /*background-color: #59AE37;*/
+  border-radius:  2px;
 }
 
 .over-square {
-  height: 74px;
+  /* height: 74px; */
   width: 202px;
-  position: absolute;
-  right: 56px;
-  top: 64px;
+  position: relative;
+  /* right: 56px; */
+  top: 8px;
   text-align: center;
 }
 
 .over-square p {
   position: relative;
   bottom: 10px;
+  color:  white;
 }
 
 .over-square input {
   width: 148px;
   text-align: center;
   position: relative;
+  border: 0;
   bottom: 25px;
+  /*background-color: #59AE37;*/
+  border-radius:  2px;
 }
 
 .container-text-type {
@@ -574,6 +599,7 @@ h1, h2 {
 .container-text-type p {
   position: relative;
   bottom: 10px;
+  font-size: 0.85em;
 }
 
 .sans {
@@ -586,27 +612,64 @@ h1, h2 {
   font-family: serif;
 }
 
+.norm {
+  float: left;
+}
+
+.bold {
+  float: left;
+  font-weight: bold;
+}
+
+.top-fix {
+  width: 67%;
+}
+
 .switch-container {
   width: 50px;
-  height: 25px;
-  background-color: green;
-  border-radius: 5px;
+  height: 11px;
+  background-color: #2A2A2A;
+  border-radius: 2px;
   float: left;
   margin-left: 5px;
   margin-right: 5px;
+  margin-top: 5px;
+  overflow:  hidden;
 }
 
+.switch-container-bold {
+  width: 50px;
+  height: 11px;
+  background-color: #2A2A2A;
+  border-radius: 2px;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  overflow:  hidden;
+}
+
+
 .round-switch {
-  height: 25px;
-  width: 25px;
-  border-radius: 100%;
-  background-color: turquoise;
+  height: 11px;
+  width: 50%;
+  /* border-radius: 100%; */
+  background-color: #AE3737;
   transition: all 0.3s;
 }
 
 .for-center {
-  width: 73%;
+  width: 70%;
   margin: 0 auto;
+}
+
+.top-fix {
+  width: 68%;
+}
+
+.bottom-fix {
+  position: relative;
+  bottom: 24px;
 }
 
 /*-----------------TemplateONE-------------------------------------------------------*/
@@ -614,19 +677,19 @@ h1, h2 {
 .header-one {
   width: 100%;
   height: 50px;
-  /*background-color: red;*/
+  background-color: #ae3737;
 }
 
 .header-one input {
   border-radius: 3px;
   border: 0;
   text-align: center;
-  width: 65%;
+  width: 100%;
+  font-size: 1.25em;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 33px;
-  margin-top: 16px;
+  /* margin:  0 auto; */
+  margin-top: 14px;
   color: white;
-  font-weight: bold;
 }
 
 .header-one input:hover {
@@ -636,12 +699,34 @@ h1, h2 {
 .middle-one {
   width: 145px;
   height: 200px;
-  /*background-color: yellow;*/
+  background-color: #2a2a2a;
   margin: 0 auto;
 }
 
 .footer-one {
   width: 100%;
   height: 37px;
-  /*background-color: red;*/
+  background-color: #8b3030;
+}
+
+.one {
+  background-color: #1f1f1f;
+}
+
+.two {
+  background-color: #ae3737;
+}
+
+.three {
+  background-color: #2a2a2a;
+}
+
+.four {
+  background-color: #8b3030;
+}
+
+
+::-webkit-input-placeholder {
+  color: black;
+  opacity: 0.5;
 }

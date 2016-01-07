@@ -39,9 +39,25 @@ function movable() {
   }
 
   function divMove(event) {
+    if (event.y - aVarY < 0) {
+      saveTarget.parentElement.style.top = "0px";
+    } else if (event.y - aVarY > window.innerHeight - saveTarget.parentElement.offsetHeight + saveTarget.parentElement.offsetHeight * 0.5) {
+      saveTarget.parentElement.style.top = window.innerHeight - saveTarget.parentElement.offsetHeight + saveTarget.parentElement.offsetHeight * 0.5 + "px";
+    } else {
+      // console.log(window.innerHeight);
+      saveTarget.parentElement.style.top = event.y - aVarY + "px";
+    }
 
-    saveTarget.parentElement.style.top = event.y - aVarY + "px";
-    saveTarget.parentElement.style.left = event.x - aVarX + "px";
+    if (event.x - aVarX < 0) {
+      saveTarget.parentElement.style.left = "0px";
+    } else if (event.x - aVarX > window.innerWidth - saveTarget.parentElement.offsetWidth + saveTarget.parentElement.offsetWidth * 0.5) {
+      saveTarget.parentElement.style.left = window.innerWidth - saveTarget.parentElement.offsetWidth + saveTarget.parentElement.offsetWidth * 0.5 + "px";
+    } else {
+      saveTarget.parentElement.style.left = event.x - aVarX + "px";
+    }
+
+
+
 
   }
 

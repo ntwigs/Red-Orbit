@@ -24,11 +24,8 @@ function createChat() {
     if (findNickArea[noRepeatCounter - 1].value !== "") {
       data["username"] = findNickArea[noRepeatCounter - 1].value;
       localStorage.setItem("nickname", findNickArea[noRepeatCounter - 1].value);
-      // for (var j = 0; j < textContainer.length; j += 1) {
-        //test
         findNameField[noRepeatCounter - 1].classList.add("name-field-gone");
         textContainer[noRepeatCounter - 1].classList.add("text-container-after");
-      // }
     }
   });
 
@@ -44,7 +41,8 @@ function createChat() {
     "data" : "",
     "username": "",
     "channel": "",
-    "key": "eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd"
+    "key": "eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd",
+    "superMegaAwesomeOscar": "userSent"
   };
 
   socket.addEventListener("open", function (event) {
@@ -74,6 +72,7 @@ function createChat() {
     var pTagUser = document.createElement("P");
     var pTagMess = document.createElement("P");
     var divTagText = document.createElement("DIV");
+    var isMe = JSON.parse(event.data).superMegaAwesomeOscar;
     var chatData = JSON.parse(event.data).data;
     var chatUser = JSON.parse(event.data).username;
     var createText = document.createTextNode(chatData);
@@ -85,9 +84,9 @@ function createChat() {
 
 
     for (var i = 0; i < textContainer.length; i += 1) {
-      if (chatUser !== "" && chatData !== "") {
+      if (chatUser !== null && chatData !== "") {
 
-          if (chatUser === localStorage.getItem("nickname")) {
+          if (chatUser === localStorage.getItem("nickname") && isMe !== undefined) {
             divTagText.classList.add("user-sent");
           }
 

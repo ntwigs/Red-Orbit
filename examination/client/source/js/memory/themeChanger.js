@@ -3,6 +3,7 @@ function themeChanger() {
   var themes = document.querySelectorAll(".picker-container");
   var allCards = document.querySelectorAll(".card");
   var counter = 0;
+  var newCounter = 0;
   var i = 0;
 
   for (i = 0; i < hasCards.length; i += 1) {
@@ -17,8 +18,8 @@ function themeChanger() {
 
     this.parentElement.parentElement.setAttribute("data-theme", "plain");
 
-    for (i = 0; cards.length; i += 1) {
-      cards[i].style.backgroundImage = "url('../image/plain/0.png')";
+    for (i = 0; i < cards.length; i += 1) {
+        cards[i].style.backgroundImage = "url('../image/plain/0.png')";
     }
 
   });
@@ -29,7 +30,7 @@ function themeChanger() {
 
     this.parentElement.parentElement.setAttribute("data-theme", "red");
 
-    for (i = 0; cards.length; i += 1) {
+    for (i = 0; i < cards.length; i += 1) {
       cards[i].style.backgroundImage = "url('../image/red/0.png')";
     }
 
@@ -41,7 +42,7 @@ function themeChanger() {
 
     this.parentElement.parentElement.setAttribute("data-theme", "blue");
 
-    for (i = 0; cards.length; i += 1) {
+    for (i = 0; i < cards.length; i += 1) {
       cards[i].style.backgroundImage = "url('../image/blue/0.png')";
     }
   });
@@ -52,9 +53,10 @@ function themeChanger() {
 
     this.parentElement.parentElement.setAttribute("data-theme", "green");
 
-    for (i = 0; cards.length; i += 1) {
+    for (i = 0; i < cards.length; i += 1) {
       cards[i].style.backgroundImage = "url('../image/green/0.png')";
     }
+
   });
 
 

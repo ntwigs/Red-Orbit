@@ -21,19 +21,20 @@ function fetchColor() {
 
         this.addEventListener("keyup", function() {
           var saveTarget = this.parentElement.parentElement.parentElement;
-          saveTarget = saveTarget.children[1].children[1];
+
+          saveTarget = saveTarget.children[1].children[0];
 
           if (this.value.length === 6 && this.value.slice(0, 1) !== "#") {
             this.value = "#" + this.value;
             this.parentElement.children[0].style.backgroundColor = this.value;
             if (this === hexIn[0]) {
-              saveTarget.style.backgroundColor = this.value;
-            }
-            if (this === hexIn[1]) {
               saveTarget.children[0].style.backgroundColor = this.value;
             }
-            if (this === hexIn[2]) {
+            if (this === hexIn[1]) {
               saveTarget.children[1].style.backgroundColor = this.value;
+            }
+            if (this === hexIn[2]) {
+              saveTarget.style.backgroundColor = this.value;
             }
             if (this === hexIn[3]) {
               saveTarget.children[2].style.backgroundColor = this.value;
@@ -41,13 +42,13 @@ function fetchColor() {
           } else if (this.value.length === 7 && this.value.slice(0, 1) === "#") {
               this.parentElement.children[0].style.backgroundColor = this.value;
               if (this === hexIn[0]) {
-                saveTarget.style.backgroundColor = this.value;
-              }
-              if (this === hexIn[1]) {
                 saveTarget.children[0].style.backgroundColor = this.value;
               }
-              if (this === hexIn[2]) {
+              if (this === hexIn[1]) {
                 saveTarget.children[1].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[2]) {
+                saveTarget.style.backgroundColor = this.value;
               }
               if (this === hexIn[3]) {
                 saveTarget.children[2].style.backgroundColor = this.value;
@@ -55,13 +56,13 @@ function fetchColor() {
           } else if (this.value.length >= 7 && this.value.slice(0, 1) !== "#") {
               this.value = "#" + this.value.slice(0, -1);
               if (this === hexIn[0]) {
-                saveTarget.style.backgroundColor = this.value;
-              }
-              if (this === hexIn[1]) {
                 saveTarget.children[0].style.backgroundColor = this.value;
               }
-              if (this === hexIn[2]) {
+              if (this === hexIn[1]) {
                 saveTarget.children[1].style.backgroundColor = this.value;
+              }
+              if (this === hexIn[2]) {
+                saveTarget.style.backgroundColor = this.value;
               }
               if (this === hexIn[3]) {
                 saveTarget.children[2].style.backgroundColor = this.value;
@@ -74,13 +75,12 @@ function fetchColor() {
           if (this.value.length === 7) {
 
             if (!reg.test(this.value)) {
-              this.style.backgroundColor = "red";
+              this.style.backgroundColor = "#8b3030";
             } else {
-              this.style.backgroundColor = "green";
+              this.style.backgroundColor = "#59AE37";
             }
 
           } else if (this.value.length < 7) {
-
             this.style.backgroundColor = "white";
 
           }
