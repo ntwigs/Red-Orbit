@@ -16,7 +16,6 @@ function chatSettings(event) {
   function findAndSet(event) {
 
       nicking[k - 1].setAttribute("placeholder", localStorage.getItem("nickname"));
-      console.log(event.target);
       event.target.classList.toggle("nick-cog-rotate");
       if (event.target.parentElement.parentElement.children[1].classList.contains("name-field-gone")) {
         event.target.parentElement.parentElement.children[1].classList.remove("name-field-gone");

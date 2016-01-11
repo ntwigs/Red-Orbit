@@ -8,5 +8,3 @@ taskbar.bringForth();
 
 var preloading = require("./preloading");
 preloading.loading();
-
-//Check on window icon

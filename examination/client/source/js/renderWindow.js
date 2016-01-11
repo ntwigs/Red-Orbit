@@ -30,9 +30,6 @@ function renderWindow(event) {
 
     }
 
-
-
-
   }
 
   navClick();

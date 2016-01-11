@@ -2,6 +2,7 @@
 
 function windowPlacement() {
 
+
   function whereToPlace() {
     var findAllWindows = document.querySelectorAll(".window");
     var counter = 0;
@@ -11,6 +12,8 @@ function windowPlacement() {
       counter++;
     }
 
+    var setZ = require("./setZ");
+    setZ.set();
     findAllWindows[counter - 1].style.top = "" + 30 * counter + "px";
     findAllWindows[counter - 1].style.left = "" + 30 * counter + "px";
   }
