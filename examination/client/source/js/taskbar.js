@@ -1,3 +1,5 @@
+"use strict";
+
 function taskbar() {
   var findTaskbar = document.querySelector(".taskbar");
   window.addEventListener("load", function() {

@@ -1,3 +1,5 @@
+"use strict";
+
 function createChat() {
 
   var findSubmit = document.querySelectorAll(".submit");
@@ -54,8 +56,12 @@ function createChat() {
     }
 
     findSubmit[counter - 1].addEventListener("click", function(event) {
-      socket.send(JSON.stringify(data));
-      findTextArea[counter - 1].value = "";
+      if (findTextArea[counter - 1].value !== "" && localStorage.getItem("nickname") !== null) {
+        // this.removeAttribute("disabled");
+        socket.send(JSON.stringify(data));
+        findTextArea[counter - 1].value = "";
+      }
+
       event.preventDefault();
     });
 
@@ -84,7 +90,7 @@ function createChat() {
 
 
     for (var i = 0; i < textContainer.length; i += 1) {
-      if (chatUser !== null && chatData !== "") {
+      if (chatUser !== null && chatData !== undefined && chatData !== "") {
 
           if (chatUser === localStorage.getItem("nickname") && isMe !== undefined) {
             divTagText.classList.add("user-sent");

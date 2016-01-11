@@ -1,3 +1,5 @@
+"use strict";
+
 function windowDestroyer() {
   var findExit = document.querySelectorAll(".exit");
   var body = document.querySelector("body");

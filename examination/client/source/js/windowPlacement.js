@@ -1,8 +1,11 @@
+"use strict";
+
 function windowPlacement() {
 
   function whereToPlace() {
     var findAllWindows = document.querySelectorAll(".window");
     var counter = 0;
+    var i = 0;
 
     for (i = 0; i < findAllWindows.length; i += 1) {
       counter++;
@@ -14,7 +17,7 @@ function windowPlacement() {
 
   whereToPlace();
 
-  
+
 
 }
 

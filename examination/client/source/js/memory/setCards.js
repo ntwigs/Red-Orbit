@@ -1,3 +1,5 @@
+"use strict";
+
 function setCards() {
   var cards = document.querySelectorAll(".card");
   var memWindows = document.querySelectorAll(".card-container");

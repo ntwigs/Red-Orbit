@@ -1,3 +1,5 @@
+"use strict";
+
 function themeChanger() {
   var hasCards = document.querySelectorAll(".theme-selector");
   var themes = document.querySelectorAll(".picker-container");
@@ -67,7 +69,7 @@ function themeChanger() {
 
 
   function bringTheme(event) {
-
+      event.target.classList.toggle("nick-cog-rotate");
       if (event.target.parentElement.parentElement.children[1].classList.contains("theme-field-gone")) {
         event.target.parentElement.parentElement.children[1].classList.remove("theme-field-gone");
         event.target.parentElement.parentElement.children[2].classList.remove("card-container-after");

@@ -1,3 +1,5 @@
+"use strict";
+
 function checkPair() {
   var container = document.querySelectorAll(".card-container");
   var counter = 0;
@@ -42,6 +44,7 @@ function checkPair() {
 
   // if (localStorage.theme !== "") {
     this.style.backgroundImage = "url('../image/" + currentTheme + "/" + this.parentElement.className + ".png')";
+
   // } else {
   //   this.style.backgroundImage = "url('../image/plain/0.png')";
   // }
@@ -85,6 +88,8 @@ function checkPair() {
           setTimeout(function() {
             saveTarget[0].classList.add("aPair");
             saveTarget[1].classList.add("aPair");
+            saveTarget[0].setAttribute("tabindex", "0");
+            saveTarget[0].setAttribute("tabindex", "0");
             console.log("PAIR");
             clicks = 0;
             pairCounter += 1;

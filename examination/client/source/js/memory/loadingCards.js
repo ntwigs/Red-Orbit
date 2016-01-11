@@ -1,3 +1,5 @@
+"use strict";
+
 function loadingCards() {
   var i = 0;
   var counter = 0;

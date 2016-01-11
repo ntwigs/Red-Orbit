@@ -1,3 +1,5 @@
+"use strict";
+
 function loadScheme() {
   var findSquare = document.querySelectorAll(".design-square");
   var tempOne = document.querySelector("#design-one");

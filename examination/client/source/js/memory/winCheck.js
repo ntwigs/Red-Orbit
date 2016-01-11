@@ -1,3 +1,5 @@
+"use strict";
+
 function winCheck(currentWindow, container) {
   var youWin = document.createTextNode("YOU WIN!");
   var breaking = document.createElement("BR");

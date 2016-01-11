@@ -46,8 +46,9 @@ function renderWindow(event) {
     windowPlacement.place();
     createChat.chat();
     movable.move();
-    windowDestroyer.destroy();
     setZ.set();
+    windowDestroyer.destroy();
+
 
   }
 
@@ -60,8 +61,8 @@ function renderWindow(event) {
       windowPlacement.place();
       createMemory.create();
       movable.move();
-      windowDestroyer.destroy();
       setZ.set();
+      windowDestroyer.destroy();
   }
 
   function renderSchemee() {
@@ -73,8 +74,8 @@ function renderWindow(event) {
       windowPlacement.place();
       colorSchemeer.initialize();
       movable.move();
-      windowDestroyer.destroy();
       setZ.set();
+      windowDestroyer.destroy();
   }
 
 

@@ -1,3 +1,5 @@
+"use strict";
+
 function checkNick() {
 
   var nickInput = document.querySelectorAll(".name-field");

@@ -1,3 +1,5 @@
+"use strict";
+
 function colorSchemeer() {
 
   var loadScheme = require("./loadScheme");

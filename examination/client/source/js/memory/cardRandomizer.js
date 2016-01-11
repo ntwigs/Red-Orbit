@@ -1,3 +1,5 @@
+"use strict";
+
 function cardRandomizer() {
   var cards = document.querySelectorAll(".card");
   var windows = document.querySelectorAll(".window");

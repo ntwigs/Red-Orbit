@@ -1,3 +1,5 @@
+"use strict";
+
 function setZ() {
   var windows = document.querySelectorAll(".window");
   var counter = 0;
@@ -13,14 +15,28 @@ function setZ() {
 
     for (var i = 0; i < glassSquare.length; i++) {
       var zindex = window.getComputedStyle(glassSquare[i]).getPropertyValue("z-index");
-
+      console.log(this);
       if ((zindex > highest) && (zindex !== "auto")) {
         highest = zindex;
+        newArr.push(highest);
       }
-
     }
 
-    return highest;
+    newArr.sort(function(a, b) {
+      return b - a;
+    });
+
+    if (newArr[0] === newArr[1]) {
+      if (newArr[0] !== undefined) {
+        newArr.unshift(parseInt(newArr[0]));
+      }
+    }
+
+    if (newArr[0] !== undefined) {
+      return newArr[0];
+    } else {
+      return highest;
+    }
 
   }
 
@@ -33,7 +49,7 @@ settingNe();
     }
 
       windows[counter - 1].addEventListener("mousedown", function() {
-        this.style.zIndex = parseInt(higestZ(".window")) + 2;
+        this.style.zIndex = parseInt(higestZ(".window")) + 1;
       });
 
   }

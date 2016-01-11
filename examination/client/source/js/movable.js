@@ -1,3 +1,5 @@
+"use strict";
+
 function movable() {
 
 
@@ -16,6 +18,10 @@ function movable() {
 
       window.addEventListener("mouseup", mouseUp, false);
   }
+
+  var aVarY = 0;
+  var aVarX = 0;
+  var saveTarget = 0;
 
   function mouseDown(event) {
 

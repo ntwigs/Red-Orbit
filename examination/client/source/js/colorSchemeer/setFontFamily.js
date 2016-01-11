@@ -1,3 +1,5 @@
+"use strict";
+
 function setFontFamily() {
   var hexSquare = document.querySelector(".over-square input");
   var hexContain = document.querySelectorAll(".over-square");
@@ -52,7 +54,7 @@ function setFontFamily() {
       });
 
   });
-  
+
   switchContainer[counter - 1].addEventListener("click", function() {
     // console.log(this);
     if (templatesHeader[counter - 1].classList.contains("serif")) {

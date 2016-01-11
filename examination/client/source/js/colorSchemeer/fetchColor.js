@@ -1,3 +1,5 @@
+"use strict";
+
 function fetchColor() {
   var hexSquare = document.querySelectorAll(".color-row input");
   var hexContain = document.querySelectorAll(".color-container");
