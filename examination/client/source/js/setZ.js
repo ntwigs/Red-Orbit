@@ -2,13 +2,18 @@
 
 function setZ() {
   var windows = document.querySelectorAll(".window");
+  var nav = document.querySelector(".taskbar");
   var counter = 0;
   var i = 0;
   var j = 0;
   var newCounter = 0;
   var newArr = [];
 
-  function higestZ(theWindows) {
+  // for (j = 0; j < 4; j += 1) {
+    nav.style.zIndex = parseInt(higestZ(".window", true));
+  // }
+
+  function higestZ(theWindows, naving) {
 
     var glassSquare = document.querySelectorAll(theWindows);
     var highest = 0;
@@ -16,10 +21,12 @@ function setZ() {
     for (var i = 0; i < glassSquare.length; i++) {
       var zindex = window.getComputedStyle(glassSquare[i]).getPropertyValue("z-index");
       if ((zindex !== "auto")) {
-        // (zindex > highest) &&
-        highest = parseInt(zindex) + 1;
-        console.log(highest)
-        newArr.push(highest);
+        if (naving) {
+          highest = parseInt(zindex) + 200;
+        } else {
+          highest = parseInt(zindex) + 1;
+          newArr.push(highest);
+        }
       }
     }
 
@@ -45,6 +52,8 @@ settingNe();
 
   function settingNe() {
 
+
+
     for (i = 0; i < windows.length; i += 1) {
       counter++;
     }
@@ -52,10 +61,9 @@ settingNe();
       windows[counter - 1].style.zIndex = parseInt(higestZ(".window"));
 
       windows[counter - 1].addEventListener("mousedown", function() {
-        // console.log(parseInt(higest));
-        this.style.zIndex = parseInt(higestZ(".window"));
-      });
+        this.style.zIndex = parseInt(higestZ(".window", false));
 
+      });
 
 
   }

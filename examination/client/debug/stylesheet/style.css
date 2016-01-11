@@ -38,6 +38,7 @@ body {
   background-color: #ae3737;
   cursor: pointer;
   transition: all 0.1s;
+  position: relative;
 }
 
 .icon1:hover {

@@ -46,11 +46,11 @@ function movable() {
 
   function divMove(event) {
     if (event.y - aVarY < 0) {
+      console.log(event.y - aVarY);
       saveTarget.parentElement.style.top = "0px";
     } else if (event.y - aVarY > window.innerHeight - saveTarget.parentElement.offsetHeight + saveTarget.parentElement.offsetHeight * 0.5) {
       saveTarget.parentElement.style.top = window.innerHeight - saveTarget.parentElement.offsetHeight + saveTarget.parentElement.offsetHeight * 0.5 + "px";
     } else {
-      // console.log(window.innerHeight);
       saveTarget.parentElement.style.top = event.y - aVarY + "px";
     }
 
@@ -61,7 +61,6 @@ function movable() {
     } else {
       saveTarget.parentElement.style.left = event.x - aVarX + "px";
     }
-
 
 
 
