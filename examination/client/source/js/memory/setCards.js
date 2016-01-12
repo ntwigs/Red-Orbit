@@ -9,13 +9,14 @@ function setCards() {
     var memWindows = document.querySelectorAll(".card-container");
     var counter = 0;
     var i = 0;
+    var lastTheme = "";
 
     for (i = 0; i < memWindows.length; i += 1) {
         counter += 1;
     }
 
     if (localStorage.theme !== "") {
-        var lastTheme = localStorage.getItem("theme");
+        lastTheme = localStorage.getItem("theme");
         memWindows[counter - 1].parentElement.setAttribute("data-theme", lastTheme);
     } else {
         memWindows[counter - 1].parentElement.setAttribute("data-theme", "plain");

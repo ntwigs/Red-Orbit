@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Obtains the colors from input and checks for errors.
+ */
 function fetchColor() {
     var hexContain = document.querySelectorAll(".color-container");
     var counter = 0;
@@ -23,58 +26,43 @@ function fetchColor() {
 
                 saveTarget = saveTarget.children[1].children[0];
 
+                //Selection is the current input (this).
+                function setBg(selection) {
+                    if (selection === hexIn[0]) {
+                        saveTarget.children[0].style.backgroundColor = hexIn[0].value;
+                    }
+
+                    if (selection === hexIn[1]) {
+                        saveTarget.children[1].style.backgroundColor = hexIn[1].value;
+                    }
+
+                    if (selection === hexIn[2]) {
+                        saveTarget.style.backgroundColor = hexIn[2].value;
+                    }
+
+                    if (selection === hexIn[3]) {
+                        saveTarget.children[2].style.backgroundColor = hexIn[3].value;
+                    }
+                }
+
                 if (this.value.length === 6 && this.value.slice(0, 1) !== "#") {
+
+                    //If there's six letters and no hashtag.
                     this.value = "#" + this.value;
                     this.parentElement.children[0].style.backgroundColor = this.value;
-                    if (this === hexIn[0]) {
-                        saveTarget.children[0].style.backgroundColor = this.value;
-                    }
+                    setBg(this);
 
-                    if (this === hexIn[1]) {
-                        saveTarget.children[1].style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[2]) {
-                        saveTarget.style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[3]) {
-                        saveTarget.children[2].style.backgroundColor = this.value;
-                    }
                 } else if (this.value.length === 7 && this.value.slice(0, 1) === "#") {
+
+                    //If there's 6 letters + a hashtag - proceed as normal.
                     this.parentElement.children[0].style.backgroundColor = this.value;
-                    if (this === hexIn[0]) {
-                        saveTarget.children[0].style.backgroundColor = this.value;
-                    }
+                    setBg(this);
 
-                    if (this === hexIn[1]) {
-                        saveTarget.children[1].style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[2]) {
-                        saveTarget.style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[3]) {
-                        saveTarget.children[2].style.backgroundColor = this.value;
-                    }
                 } else if (this.value.length >= 7 && this.value.slice(0, 1) !== "#") {
+
+                    //If there's 7 or more letters (More should be impossible) - then remove that last and add a hash.
                     this.value = "#" + this.value.slice(0, -1);
-                    if (this === hexIn[0]) {
-                        saveTarget.children[0].style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[1]) {
-                        saveTarget.children[1].style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[2]) {
-                        saveTarget.style.backgroundColor = this.value;
-                    }
-
-                    if (this === hexIn[3]) {
-                        saveTarget.children[2].style.backgroundColor = this.value;
-                    }
+                    setBg(this);
                 }
 
                 //Check if entered text is valid hex.

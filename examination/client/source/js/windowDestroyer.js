@@ -22,4 +22,5 @@ function windowDestroyer() {
     }
 }
 
+//Off to createMemory
 module.exports.destroy = windowDestroyer;

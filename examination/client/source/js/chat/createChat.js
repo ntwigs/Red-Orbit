@@ -44,16 +44,16 @@ function createChat() {
 
     //The keys and values needed for a message.
     var data = {
-        "type": "message",
-        "data": "",
-        "username": "",
-        "channel": "",
-        "key": "eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd",
-        "didUserSend": "userSent"
+        type: "message",
+        data: "",
+        username: "",
+        channel: "",
+        key: "eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd",
+        didUserSend: "userSent"
     };
 
     //Open socker
-    socket.addEventListener("open", function(event) {
+    socket.addEventListener("open", function() {
         var i = 0;
         var counter = 0;
 

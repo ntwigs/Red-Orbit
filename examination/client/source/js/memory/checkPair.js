@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Gamelogic (Is it pair? What if it isn't? Etc.)
+ */
 function checkPair() {
     var container = document.querySelectorAll(".card-container");
     var counter = 0;

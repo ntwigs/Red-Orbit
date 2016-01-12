@@ -39,7 +39,6 @@ function cardRandomizer() {
         newCounter += 1;
     }
 
-
     function randomAndSet() {
         var counter = 0;
         var windowCount = 0;
