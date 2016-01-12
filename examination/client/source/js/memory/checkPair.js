@@ -82,17 +82,14 @@ function checkPair() {
     }
 
     function checkEnter(selection, event) {
-        if (event.keyCode === 13) {
-            selection.click();
-        }
-
+        selection.click();
         event.preventDefault();
     }
 
     function listener(whichElement) {
 
         if (clicks < 2) {
-            
+
             clicks += 1;
 
             tries += 1;
@@ -124,13 +121,20 @@ function checkPair() {
         }
     }
 
-    for (i = 0; i < cardsInWindow.length; i += 1) {
-        cardsInWindow[i].addEventListener("keypress", function() {
-            checkEnter(this, event);
+    function applyClicks(i, event) {
+        cardsInWindow[i].addEventListener("keypress", function(event) {
+            if (event.keyCode === 13) {
+                checkEnter(this, event);
+            }
         });
+
         cardsInWindow[i].addEventListener("click", function() {
-            listener(this);
+            listener(this, event);
         });
+    }
+
+    for (i = 0; i < cardsInWindow.length; i += 1) {
+        applyClicks(i, event);
     }
 }
 
