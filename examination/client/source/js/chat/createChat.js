@@ -52,7 +52,7 @@ function createChat() {
         didUserSend: "userSent"
     };
 
-    //Open socker
+    //Open socket
     socket.addEventListener("open", function() {
         var i = 0;
         var counter = 0;

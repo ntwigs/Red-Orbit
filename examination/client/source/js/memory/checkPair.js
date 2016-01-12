@@ -22,11 +22,13 @@ function checkPair() {
     var cardsInWindow = container[counter - 1].querySelectorAll(".card");
     var counterInWindow = container[counter - 1].parentElement.querySelector(".clickCounter");
 
-    function outbreak(whichElement) {
+    //Pushes cards into array.
+    function checkerTool(whichElement) {
         newArr.push(whichElement.parentElement.className);
         saveTarget.push(whichElement);
     }
 
+    //If it's a pair, do the following.
     function onPair() {
         saveTarget[0].classList.add("aPair");
         saveTarget[1].classList.add("aPair");
@@ -39,6 +41,7 @@ function checkPair() {
         }
     }
 
+    //If it's not a pair, do the following.
     function notPair(theTheme) {
 
         if (localStorage.theme !== "") {
@@ -54,19 +57,20 @@ function checkPair() {
         clicks = 0;
     }
 
-    function hej(whichElement, currentTheme) {
+    //Runs either onPair, or notPair with checkerTool.
+    function isPair(whichElement, currentTheme) {
         if (targetArr[0] !== targetArr[1]) {
             if (newArr.length < 1) {
-                outbreak(whichElement);
+                checkerTool(whichElement);
             } else if (newArr.length < 2) {
                 if (targetArr[0] && targetArr[1]) {
-                    outbreak(whichElement);
+                    checkerTool(whichElement);
 
                 }
             } else if (newArr.length >= 2) {
                 newArr.length = 0;
                 saveTarget.length = 0;
-                outbreak(whichElement);
+                checkerTool(whichElement);
             }
 
             if (newArr[0] && newArr[1]) {
@@ -81,11 +85,13 @@ function checkPair() {
         }
     }
 
+    //Click with enter.
     function checkEnter(selection, event) {
         selection.click();
         event.preventDefault();
     }
 
+    //Game logic init.
     function listener(whichElement) {
 
         if (clicks < 2) {
@@ -116,11 +122,12 @@ function checkPair() {
 
             counterInWindow.textContent = tries;
 
-            hej(whichElement, currentTheme);
+            isPair(whichElement, currentTheme);
 
         }
     }
 
+    //Check if pressing with enter.
     function applyClicks(i, event) {
         cardsInWindow[i].addEventListener("keypress", function(event) {
             if (event.keyCode === 13) {
@@ -128,11 +135,13 @@ function checkPair() {
             }
         });
 
+        //Check if clicked.
         cardsInWindow[i].addEventListener("click", function() {
             listener(this, event);
         });
     }
 
+    //Apply the events to the cards.
     for (i = 0; i < cardsInWindow.length; i += 1) {
         applyClicks(i, event);
     }

@@ -24,4 +24,5 @@ function createMemory() {
 
 }
 
+//Off to renderWindow
 module.exports.create = createMemory;
