@@ -12,10 +12,15 @@ function checkNick() {
         k += 1;
     }
 
+    //Check if there is a nickname in localstorage
     if (localStorage.getItem("nickname") !== null) {
+
+        //Get nick from local storage
         nickname = localStorage.getItem("nickname");
         nickInput[k - 1].classList.add("name-field-gone");
     } else {
+
+        //Else display nick box.
         nickInput[k - 1].classList.remove("name-field-gone");
     }
 

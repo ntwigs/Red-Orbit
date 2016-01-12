@@ -13,6 +13,7 @@ function loadScheme() {
         counter += 1;
     }
 
+    //Appends the template
     findSquare[counter - 1].insertBefore(clone, setPoint[counter - 1]);
 
 }

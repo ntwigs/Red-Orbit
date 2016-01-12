@@ -13,6 +13,8 @@ function setFontFamily() {
     }
 
     var hexIn = hexContain[counter - 1].querySelector("input");
+
+    //Example text
     templatesHeader[counter - 1].value = "LOREM IPSUM";
 
     hexIn.addEventListener("keydown", function() {
@@ -20,8 +22,7 @@ function setFontFamily() {
         this.addEventListener("keyup", function() {
             var saveTarget = this.parentElement.parentElement.parentElement.children[1].firstElementChild.firstElementChild.firstElementChild;
 
-            // console.log(saveTarget);
-
+            //Gets a # in there - to declare the input as hex. -> Add color to text.
             if (this.value.length === 6 && this.value.slice(0, 1) !== "#") {
                 this.value = "#" + this.value;
                 saveTarget.style.color = this.value;
@@ -36,6 +37,7 @@ function setFontFamily() {
 
             if (this.value.length === 7) {
 
+                //Sets color to input depending on value
                 if (!reg.test(this.value)) {
                     this.style.backgroundColor = "#ae3737";
                 } else {
@@ -52,6 +54,7 @@ function setFontFamily() {
 
     });
 
+    //Switch for serif
     switchContainer[counter - 1].addEventListener("click", function() {
         // console.log(this);
         if (templatesHeader[counter - 1].classList.contains("serif")) {
@@ -63,6 +66,7 @@ function setFontFamily() {
         }
     });
 
+    //Switch for bold
     switchContainerBold[counter - 1].addEventListener("click", function() {
         if (templatesHeader[counter - 1].classList.contains("bold")) {
             templatesHeader[counter - 1].classList.remove("bold");

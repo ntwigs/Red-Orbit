@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Initialize all windows ready for use.
+ */
 function renderWindow() {
 
     var movable = require("./movable");
@@ -10,6 +13,7 @@ function renderWindow() {
     var windowPlacement = require("./windowPlacement");
     var setZ = require("./setZ");
 
+    //Checks if which nav-button is being pressed.
     function navClick() {
         var findNav = document.querySelectorAll(".icon1");
 
@@ -34,12 +38,14 @@ function renderWindow() {
 
     navClick();
 
+    //Creates chat instance.
     function render() {
         var template = document.querySelector("#chat-template");
         var clone = document.importNode(template.content, true);
         var beforeThis = document.querySelector(".wrapper-hero");
         document.querySelector("body").insertBefore(clone, beforeThis);
 
+        //initializes Placement, chat-part, movable-window, z-index, able to destroy window.
         windowPlacement.place();
         createChat.chat();
         movable.move();
@@ -48,12 +54,14 @@ function renderWindow() {
 
     }
 
+    //Create memory
     function renderMem() {
       var template = document.querySelector("#window-template");
       var clone = document.importNode(template.content, true);
       var beforeThis = document.querySelector(".wrapper-hero");
       document.querySelector("body").insertBefore(clone, beforeThis);
 
+      //initializes Placement, create-memory, movable-window, z-index, able to destroy window.
       windowPlacement.place();
       createMemory.create();
       movable.move();
@@ -61,12 +69,14 @@ function renderWindow() {
       windowDestroyer.destroy();
   }
 
+    //Creates Schemee (Third 'app')
     function renderSchemee() {
       var template = document.querySelector("#schemee-template");
       var clone = document.importNode(template.content, true);
       var beforeThis = document.querySelector(".wrapper-hero");
       document.querySelector("body").insertBefore(clone, beforeThis);
 
+      //initializes Placement, schemeer-init, movable-window, z-index, able to destroy window.
       windowPlacement.place();
       colorSchemeer.initialize();
       movable.move();

@@ -83,6 +83,7 @@ function fetchColor() {
 
                 if (this.value.length === 7) {
 
+                    //Sets colors on inputs depending on value
                     if (!reg.test(this.value)) {
                         this.style.backgroundColor = "#8b3030";
                     } else {

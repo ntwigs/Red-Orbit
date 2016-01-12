@@ -12,6 +12,7 @@ function chatSettings() {
 
     function findAndSet(event) {
 
+        //Checks if the checkNick has triggered (name-field-gone)
         nicking[k - 1].setAttribute("placeholder", localStorage.getItem("nickname"));
         event.target.classList.toggle("nick-cog-rotate");
         if (event.target.parentElement.parentElement.children[1].classList.contains("name-field-gone")) {
