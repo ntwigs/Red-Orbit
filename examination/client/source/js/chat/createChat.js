@@ -117,4 +117,5 @@ function createChat() {
 
 }
 
+//Off to renderWindow
 module.exports.chat = createChat;

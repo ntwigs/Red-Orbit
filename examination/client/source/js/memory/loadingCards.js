@@ -1,5 +1,7 @@
 "use strict";
-
+/**
+ * Gets the memory template
+ */
 function loadingCards() {
     var i = 0;
     var counter = 0;
@@ -16,4 +18,5 @@ function loadingCards() {
 
 }
 
+//Off to createMemory
 module.exports.load = loadingCards;

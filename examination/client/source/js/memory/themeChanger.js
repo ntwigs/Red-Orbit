@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Makes it available for the user to change the theme of the memory.
+ */
 function themeChanger() {
     var hasCards = document.querySelectorAll(".theme-selector");
     var counter = 0;
@@ -9,71 +12,49 @@ function themeChanger() {
         counter += 1;
     }
 
+    //Select all cards.
     var cards = document.querySelectorAll(".card-container")[counter - 1].querySelectorAll(".card");
 
-    hasCards[counter - 1].querySelectorAll(".picker-container")[0].addEventListener("click", function() {
+    //Check and get (if) theme
+    function whatCards(color) {
 
-        localStorage.setItem("theme", "plain");
+        localStorage.setItem("theme", color);
 
-        this.parentElement.parentElement.setAttribute("data-theme", "plain");
+        hasCards[counter - 1].parentElement.setAttribute("data-theme", color);
 
         for (i = 0; i < cards.length; i += 1) {
-            cards[i].style.backgroundImage = "url('../image/plain/0.png')";
+            cards[i].style.backgroundImage = "url('../image/" + color + "/0.png')";
         }
 
+    }
+
+    hasCards[counter - 1].querySelectorAll(".picker-container")[0].addEventListener("click", function() {
+        whatCards("plain");
     });
 
     hasCards[counter - 1].querySelectorAll(".picker-container")[1].addEventListener("click", function() {
-
-        localStorage.setItem("theme", "red");
-
-        this.parentElement.parentElement.setAttribute("data-theme", "red");
-
-        for (i = 0; i < cards.length; i += 1) {
-            cards[i].style.backgroundImage = "url('../image/red/0.png')";
-        }
-
+        whatCards("red");
     });
 
     hasCards[counter - 1].querySelectorAll(".picker-container")[2].addEventListener("click", function() {
-
-        localStorage.setItem("theme", "blue");
-
-        this.parentElement.parentElement.setAttribute("data-theme", "blue");
-
-        for (i = 0; i < cards.length; i += 1) {
-            cards[i].style.backgroundImage = "url('../image/blue/0.png')";
-        }
+        whatCards("blue");
     });
 
     hasCards[counter - 1].querySelectorAll(".picker-container")[3].addEventListener("click", function() {
-
-        localStorage.setItem("theme", "green");
-
-        this.parentElement.parentElement.setAttribute("data-theme", "green");
-
-        for (i = 0; i < cards.length; i += 1) {
-            cards[i].style.backgroundImage = "url('../image/green/0.png')";
-        }
-
+        whatCards("green");
     });
 
     var themeButton = hasCards[counter - 1].parentElement.firstElementChild.firstElementChild;
 
     function bringTheme(event) {
         event.target.classList.toggle("nick-cog-rotate");
-        if (event.target.parentElement.parentElement.children[1].classList.contains("theme-field-gone")) {
-            event.target.parentElement.parentElement.children[1].classList.remove("theme-field-gone");
-            event.target.parentElement.parentElement.children[2].classList.remove("card-container-after");
-        } else {
-            event.target.parentElement.parentElement.children[1].classList.add("theme-field-gone");
-            event.target.parentElement.parentElement.children[2].classList.add("card-container-after");
-        }
-
+        event.target.parentElement.parentElement.children[1].classList.toggle("theme-field-gone");
+        event.target.parentElement.parentElement.children[2].classList.toggle("card-container-after");
     }
 
     themeButton.addEventListener("click", bringTheme);
 
 }
 
+//Off to createMemory
 module.exports.change = themeChanger;

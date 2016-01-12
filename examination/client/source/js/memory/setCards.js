@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * Gets theme
+ * Gives element appropriate and matching images that represents cards.
+ */
 function setCards() {
     var cards = document.querySelectorAll(".card");
     var memWindows = document.querySelectorAll(".card-container");
@@ -18,18 +22,22 @@ function setCards() {
     }
 
     for (i = 0; i < cards.length; i += 1) {
+
+        //If there's no image - set the images with the last used theme.
         if (window.getComputedStyle(cards[i]).getPropertyValue("background-image") === "none") {
             if (localStorage.theme !== "") {
                 lastTheme = localStorage.getItem("theme");
                 cards[i].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
             } else {
+
+                //If there's no theme, then use the plain theme.
                 cards[i].style.backgroundImage = "url('../image/plain/0.png')";
             }
 
-            //Här kan man ändra grunden.
         }
     }
 
 }
 
+//Off to createMemory
 module.exports.set = setCards;

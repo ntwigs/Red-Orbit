@@ -7,10 +7,6 @@ function setZ() {
     var i = 0;
     var newArr = [];
 
-    // for (j = 0; j < 4; j += 1) {
-
-    // }
-
     function higestZ(theWindows, naving) {
 
         var glassSquare = document.querySelectorAll(theWindows);
@@ -71,4 +67,5 @@ function setZ() {
 
 }
 
+//Off to renderWindow + windowPlacement
 module.exports.set = setZ;

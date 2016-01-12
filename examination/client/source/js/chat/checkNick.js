@@ -26,4 +26,5 @@ function checkNick() {
 
 }
 
+//Off to createChat
 module.exports.check = checkNick;

@@ -1,7 +1,8 @@
 "use strict";
 
 function preloading() {
-    if (document.images) {
+
+    window.addEventListener("load", function() {
         var img1 = new Image();
         var img2 = new Image();
         var img3 = new Image();
@@ -12,6 +13,19 @@ function preloading() {
         var img8 = new Image();
         var img9 = new Image();
 
+        img1.src = "../image/blue/0.png";
+        img2.src = "../image/blue/1.png";
+        img3.src = "../image/blue/2.png";
+        img4.src = "../image/blue/3.png";
+        img5.src = "../image/blue/4.png";
+        img6.src = "../image/blue/5.png";
+        img7.src = "../image/blue/6.png";
+        img8.src = "../image/blue/7.png";
+        img9.src = "../image/blue/8.png";
+    });
+
+    window.addEventListener("load", function() {
+
         var img10 = new Image();
         var img11 = new Image();
         var img12 = new Image();
@@ -21,6 +35,19 @@ function preloading() {
         var img16 = new Image();
         var img17 = new Image();
         var img18 = new Image();
+
+        img10.src = "../image/red/0.png";
+        img11.src = "../image/red/1.png";
+        img12.src = "../image/red/2.png";
+        img13.src = "../image/red/3.png";
+        img14.src = "../image/red/4.png";
+        img15.src = "../image/red/5.png";
+        img16.src = "../image/red/6.png";
+        img17.src = "../image/red/7.png";
+        img18.src = "../image/red/8.png";
+    });
+
+    window.addEventListener("load", function() {
 
         var img19 = new Image();
         var img20 = new Image();
@@ -34,26 +61,6 @@ function preloading() {
 
         var img28 = new Image();
 
-        img1.src = "../image/blue/0.png";
-        img2.src = "../image/blue/1.png";
-        img3.src = "../image/blue/2.png";
-        img4.src = "../image/blue/3.png";
-        img5.src = "../image/blue/4.png";
-        img6.src = "../image/blue/5.png";
-        img7.src = "../image/blue/6.png";
-        img8.src = "../image/blue/7.png";
-        img9.src = "../image/blue/8.png";
-
-        img10.src = "../image/red/0.png";
-        img11.src = "../image/red/1.png";
-        img12.src = "../image/red/2.png";
-        img13.src = "../image/red/3.png";
-        img14.src = "../image/red/4.png";
-        img15.src = "../image/red/5.png";
-        img16.src = "../image/red/6.png";
-        img17.src = "../image/red/7.png";
-        img18.src = "../image/red/8.png";
-
         img19.src = "../image/green/0.png";
         img20.src = "../image/green/1.png";
         img21.src = "../image/green/2.png";
@@ -65,7 +72,10 @@ function preloading() {
         img27.src = "../image/green/8.png";
 
         img28.src = "../image/icons/coggrey.png";
-    }
+
+    });
+
 }
 
+//Off to app
 module.exports.loading = preloading;

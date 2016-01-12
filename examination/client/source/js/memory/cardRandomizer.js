@@ -14,6 +14,7 @@ function cardRandomizer() {
         }
     }
 
+    //Fisher yates shuffle function
     function shuffle(cardArr) {
         var m = cardArr.length;
         var t;
@@ -38,6 +39,7 @@ function cardRandomizer() {
         newCounter += 1;
     }
 
+
     function randomAndSet() {
         var counter = 0;
         var windowCount = 0;
@@ -46,8 +48,10 @@ function cardRandomizer() {
             windowCount += 1;
         }
 
+        //Selects all the cards
         var cardsInWindows = windows[windowCount - 1].querySelectorAll(".card");
 
+        //For ea value in array adds card number to class.
         for (i = 0; i < 16; i += 1) {
             newNumber = shuffle(cardArr).splice(0, 1);
             counter += 1;
@@ -60,4 +64,5 @@ function cardRandomizer() {
 
 }
 
+//Off to createMemory
 module.exports.run = cardRandomizer;

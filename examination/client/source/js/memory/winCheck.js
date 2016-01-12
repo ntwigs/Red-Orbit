@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * Adds a winning message to the the specific window (Current window).
+ * @param currentWindow
+ */
 function winCheck(currentWindow) {
     var youWin = document.createTextNode("YOU WIN!");
     var breaking = document.createElement("BR");
@@ -11,4 +15,5 @@ function winCheck(currentWindow) {
     currentWindow.classList.add("present-click");
 }
 
+//Off to checkPair
 module.exports.win = winCheck;

@@ -17,7 +17,6 @@ function fetchColor() {
         newCounter += 1;
 
         hexIn[i].addEventListener("keydown", function() {
-            // console.log(saveTarget);
 
             this.addEventListener("keyup", function() {
                 var saveTarget = this.parentElement.parentElement.parentElement;
@@ -102,4 +101,5 @@ function fetchColor() {
 
 }
 
+//Off to colorSchemeer
 module.exports.fetch = fetchColor;

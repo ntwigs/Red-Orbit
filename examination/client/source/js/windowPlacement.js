@@ -5,6 +5,9 @@ var height = 0;
 var width = 0;
 var counting = 0;
 
+/**
+ * Where the window should be placed on load.
+ */
 function windowPlacement() {
 
     function whereToPlace() {
@@ -25,6 +28,7 @@ function windowPlacement() {
         height += 30;
         width += 30;
 
+        //Checks if the windows are too close to the bottom of the screen.
         if ((width) > window.innerHeight - 500) {
             newCounter = 0;
             width = 30;
@@ -35,6 +39,7 @@ function windowPlacement() {
             findAllWindows[counter - 1].style.left = "" + height + "px";
         }
 
+        //Checks if the windows are too close to the right border of the screen.
         if ((height) > window.innerWidth - 450) {
             counting += 1;
             height = 5 * counting;
@@ -45,4 +50,5 @@ function windowPlacement() {
 
 }
 
+//Off to createMemory
 module.exports.place = windowPlacement;

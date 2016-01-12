@@ -86,4 +86,5 @@ function renderWindow() {
 
 }
 
+//Off to app
 module.exports.render = renderWindow;

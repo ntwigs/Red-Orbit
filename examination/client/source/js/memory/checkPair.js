@@ -86,7 +86,6 @@ function checkPair() {
                             saveTarget[1].classList.add("aPair");
                             saveTarget[0].setAttribute("tabindex", "0");
                             saveTarget[0].setAttribute("tabindex", "0");
-                            console.log("PAIR");
                             clicks = 0;
                             pairCounter += 1;
                             if (pairCounter >= 8) {
@@ -105,8 +104,6 @@ function checkPair() {
                                 saveTarget[1].style.backgroundImage = "url('../image/plain/0.png')";
                             }
 
-                            //Samma som grunden.
-                            console.log("NOT A PAIR");
                             clicks = 0;
                         }, 1000);
                     }
@@ -121,4 +118,5 @@ function checkPair() {
     }
 }
 
+//Off to createMemory
 module.exports.check = checkPair;

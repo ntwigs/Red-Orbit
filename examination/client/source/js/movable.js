@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * Makes the window draggable.
+ */
 function movable() {
 
     var findWindows = document.querySelectorAll(".window");
@@ -18,23 +21,30 @@ function movable() {
         window.addEventListener("mouseup", mouseUp, false);
     }
 
+    //Declares variables used for locating pointer.
     var aVarY = 0;
     var aVarX = 0;
     var saveTarget = 0;
 
     function mouseDown(event) {
 
+        //Checks if the target has the classname "top".
         if (event.target.className.slice(0, 3) === "top") {
+
+            //Saves the current cords - and the current target.
             aVarY = event.offsetY;
             aVarX = event.offsetX;
             saveTarget = event.target;
             window.addEventListener("mousemove", divMove, true);
+
+            //Gives the current target a 'pretty' and practical opacity.
             saveTarget.parentElement.style.opacity = 0.85;
         }
     }
 
     function mouseUp() {
 
+        //Sets the opacity to 1 when the user drops the window.
         for (i = 0; i < findWindows.length; i += 1) {
             findWindows[i].style.opacity = 1;
         }
@@ -44,6 +54,8 @@ function movable() {
     }
 
     function divMove(event) {
+
+        //Checks if the window should move - sets bounding-box (for both x and y).
         if (event.y - aVarY < 0) {
             console.log(event.y - aVarY);
             saveTarget.parentElement.style.top = "0px";
@@ -67,4 +79,5 @@ function movable() {
 
 }
 
+//Off to renderWindow
 module.exports.move = movable;

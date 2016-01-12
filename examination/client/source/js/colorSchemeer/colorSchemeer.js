@@ -16,4 +16,5 @@ function colorSchemeer() {
 
 }
 
+//Off to renderWindow
 module.exports.initialize = colorSchemeer;
