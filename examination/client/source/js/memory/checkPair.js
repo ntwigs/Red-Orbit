@@ -44,7 +44,7 @@ function checkPair() {
     //If it's not a pair, do the following.
     function notPair(theTheme) {
 
-        if (localStorage.theme !== "") {
+        if (localStorage.theme) {
 
             // var lastTheme = localStorage.getItem("theme");
             saveTarget[0].style.backgroundImage = "url('../image/" + theTheme + "/0.png')";

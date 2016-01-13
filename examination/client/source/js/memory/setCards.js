@@ -15,7 +15,7 @@ function setCards() {
         counter += 1;
     }
 
-    if (localStorage.theme !== "") {
+    if (localStorage.theme) {
         lastTheme = localStorage.getItem("theme");
         memWindows[counter - 1].parentElement.setAttribute("data-theme", lastTheme);
     } else {
@@ -26,7 +26,7 @@ function setCards() {
 
         //If there's no image - set the images with the last used theme.
         if (window.getComputedStyle(cards[i]).getPropertyValue("background-image") === "none") {
-            if (localStorage.theme !== "") {
+            if (localStorage.theme) {
                 lastTheme = localStorage.getItem("theme");
                 cards[i].style.backgroundImage = "url('../image/" + lastTheme + "/0.png')";
             } else {
